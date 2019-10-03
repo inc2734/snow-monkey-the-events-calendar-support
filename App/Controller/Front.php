@@ -20,13 +20,13 @@ class Front {
 		add_action(
 			'tribe_tec_template_chooser',
 			function( $template ) {
-				add_filter( "page_template", [ $this, '_page_template'], 10000, 3 );
+				add_filter( 'page_template', [ $this, '_page_template' ], 10000, 3 );
 			}
 		);
 	}
 
 	public function _page_template( $template, $type, $templates ) {
-		remove_filter( "page_template", [ $this, '_page_template'], 10000, 3 );
+		remove_filter( 'page_template', [ $this, '_page_template' ], 10000, 3 );
 
 		if ( \Tribe__Events__Main::POSTTYPE !== get_post_type() ) {
 			return $template;
@@ -102,7 +102,7 @@ class Front {
 
 		if ( \Tribe__Events__Main::POSTTYPE === $post_type ) {
 			$items[1] = [
-				'title' => __( 'Events', 'snow-monkey-the-events-calendar' ),
+				'title' => __( 'Events', 'snow-monkey-the-events-calendar-support' ),
 				'link'  => get_post_type_archive_link( \Tribe__Events__Main::POSTTYPE ),
 			];
 		}

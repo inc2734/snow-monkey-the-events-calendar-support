@@ -66,7 +66,7 @@ class Bootstrap {
 		new \Inc2734\WP_GitHub_Plugin_Updater\Bootstrap(
 			plugin_basename( __FILE__ ),
 			'inc2734',
-			'snow-monkey-the-events-calendar'
+			'snow-monkey-the-events-calendar-support'
 		);
 	}
 
@@ -79,7 +79,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey.', 'snow-monkey-the-events-calendar' ); ?>
+				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey.', 'snow-monkey-the-events-calendar-support' ); ?>
 			</p>
 		</div>
 		<?php
@@ -94,7 +94,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v7.13.0 or more.', 'snow-monkey-the-events-calendar' ); ?>
+				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v7.13.0 or more.', 'snow-monkey-the-events-calendar-support' ); ?>
 			</p>
 		</div>
 		<?php
@@ -109,7 +109,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs The Events Calendar.', 'snow-monkey-the-events-calendar' ); ?>
+				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs The Events Calendar.', 'snow-monkey-the-events-calendar-support' ); ?>
 			</p>
 		</div>
 		<?php

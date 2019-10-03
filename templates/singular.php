@@ -8,7 +8,7 @@
 use Framework\Controller\Controller;
 
 global $wp_query;
-$post_type = $wp_query->get( 'post_type' );
+$_post_type = $wp_query->get( 'post_type' );
 
 Controller::layout( get_theme_mod( 'singular-post-layout' ) );
-Controller::render( 'content', $post_type );
+Controller::render( 'content', $_post_type );

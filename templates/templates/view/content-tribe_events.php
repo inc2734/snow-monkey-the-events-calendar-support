@@ -8,23 +8,24 @@
 use Framework\Helper;
 
 global $wp_query;
-$post_type = $wp_query->get( 'post_type' );
+$_post_type = $wp_query->get( 'post_type' );
 
 $eyecatch_position = get_theme_mod( get_post_type() . '-eyecatch' );
 ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-<article <?php post_class(); ?>>
-	<?php
-	if ( 'title-on-page-header' !== $eyecatch_position ) {
-		Helper::get_template_part( 'template-parts/content/entry/header/header', $post_type );
-	}
-	?>
+<?php while ( have_posts() ) : ?>
+	<?php the_post(); ?>
+	<article <?php post_class(); ?>>
+		<?php
+		if ( 'title-on-page-header' !== $eyecatch_position ) {
+			Helper::get_template_part( 'template-parts/content/entry/header/header', $_post_type );
+		}
+		?>
 
-	<div class="c-entry__body">
-		<?php Helper::get_template_part( 'template-parts/content/entry/content/content', $post_type ); ?>
-	</div>
-</article>
+		<div class="c-entry__body">
+			<?php Helper::get_template_part( 'template-parts/content/entry/content/content', $_post_type ); ?>
+		</div>
+	</article>
 <?php endwhile; ?>
 
 <?php
