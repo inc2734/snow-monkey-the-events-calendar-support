@@ -1,0 +1,13 @@
+.wpaw-slider-widget__thumbnail img {
+  margin-bottom: 5px;
+  height: auto;
+  max-width: 100%;
+}
+
+.js-wpaw-slider-widget-only-slide {
+  display: none;
+}
+
+.js-wpaw-slider-widget-only-slide[aria-hidden="false"] {
+  display: block;
+}

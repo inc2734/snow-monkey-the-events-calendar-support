@@ -1,0 +1,53 @@
+<% if(components.length) { %>
+  <%- include('_object/_component/_page-header', { 'title': components[0].config.category[0] }) %>
+<% } %>
+
+<div class="c-container">
+  <div class="c-row c-row--margin-l">
+    <div class="c-row__col c-row__col--1-1 c-row__col--lg-3-4">
+      <main id="main" class="l-main" role="main">
+
+        <% if(components.length) { %>
+
+          <ul class="p-table-of-contents">
+            <% components.forEach(function(component) { %>
+              <li class="p-table-of-contents__item">
+                <a href="#<%- component.config.name %>"><%- component.config.name %></a>
+              </li>
+            <% }) %>
+          </ul>
+
+          <% components.forEach(function(component) { %>
+            <article class="c-entry">
+              <header class="c-entry__header">
+                <h2 class="c-entry__title" id="<%- component.config.name %>"><%- component.config.name %></h2>
+                <ul class="c-meta">
+                  <li class="c-meta__item">
+                    <%- component.sourcePath %>
+                  </li>
+                </ul>
+              </header>
+              <div class="c-entry__content">
+                <%- component.html %>
+              </div>
+            </article>
+          <% }) %>
+        <% } else { %>
+          <article class="c-entry">
+            <div class="c-entry__content">
+              <%- html %>
+            </div>
+          </article>
+        <% } %>
+
+      </main>
+    </div>
+    <div class="c-row__col c-row__col--1-1 c-row__col--lg-1-4 u-hidden u-visible-lg-up">
+      <aside id="sub" class="l-sub" role="complementary">
+        <nav class="p-local-nav">
+          <%- include('sidemenu') %>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</div>

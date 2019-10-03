@@ -1,0 +1,31 @@
+.wpaw-carousel {
+  &__canvas {
+    visibility: hidden;
+
+    &.slick-initialized {
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item-figure {
+    @include cover-img();
+    background-color: #eee;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 75%;
+    }
+  }
+
+  &__item-taxonomy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1;
+  }
+}

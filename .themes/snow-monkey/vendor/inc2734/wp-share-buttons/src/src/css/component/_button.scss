@@ -1,0 +1,234 @@
+.wp-share-button {
+  $root: &;
+
+  &__count {
+    position: relative;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 'wp-share-buttons';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @each $name, $values in $icons {
+      &--#{$name} {
+        color: nth($values, 1);
+
+        &::before {
+          content: nth($values, 2);
+        }
+      }
+    }
+  }
+
+  &__label {
+    margin-left: 3px;
+  }
+
+  /**
+   * Type: Balloon
+   */
+  &--balloon {
+    width: 92px;
+
+    #{$root}__count {
+      @include wp-share-button-bottom-balloon(5px, #fff, #ddd);
+      font-size: 16px;
+      margin: 0 0 6px;
+      padding: 4px 10px;
+    }
+
+    #{$root}__button {
+      padding: 3px 6px;
+      line-height: 1.2;
+    }
+  }
+
+  /**
+   * Type: Horizontal
+   */
+  &--horizontal {
+    display: flex;
+    flex-flow: row-reverse;
+
+    #{$root}__count {
+      @include wp-share-button-left-balloon(5px, #fff, #ddd);
+      float: right;
+      font-size: 11px;
+      padding: 1px 5px;
+    }
+
+    #{$root}__button {
+      float: left;
+      margin-right: 5px;
+      line-height: 16px;
+      padding: 1px 7px 1px 5px;
+      min-height: 23px;
+    }
+
+    @each $name, $values in $icons {
+      @if (false == nth($values, 3)) {
+        &#{$root}--#{$name} {
+          #{$root}__button {
+            margin-right: 0;
+          }
+
+          #{$root}__count {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * Type: Icon
+   */
+  &--icon {
+    #{$root}__count,
+    #{$root}__label {
+      display: none;
+    }
+
+    #{$root}__button {
+      height: 32px;
+      width: 32px;
+      border: none;
+    }
+
+    @each $name, $values in $icons {
+      &#{$root}--#{$name} {
+        #{$root}__button {
+          background-color: nth($values, 1);
+        }
+      }
+    }
+
+    #{$root}__icon {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+
+  /**
+   * Type: Block
+   */
+  &--block {
+    position: relative;
+
+    &:hover, &:active, &:focus {
+      #{$root}__button {
+        border-bottom: none !important;
+      }
+
+      #{$root}__count {
+        bottom: 5px;
+      }
+    }
+
+    #{$root}__label {
+      display: none;
+    }
+
+    #{$root}__count {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      color: #fff;
+      font-size: 11px;
+    }
+
+    #{$root}__button {
+      height: 40px;
+      width: auto;
+      border: none;
+    }
+
+    @each $name, $values in $icons {
+      &#{$root}--#{$name} {
+        #{$root}__button {
+          background-color: nth($values, 1);
+          border-bottom: 5px solid darken(nth($values, 1), 7%);
+        }
+
+        @if (false == nth($values, 3)) {
+          #{$root}__count {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #{$root}__icon {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+}
+
+.pocket-btn {
+  .wp-share-buttons--official & {
+    margin-right: -3px;
+    margin-left: -3px;
+  }
+}
+
+.wp-share-button--feed.wp-share-button--official {
+  @extend .wp-share-button--horizontal;
+  .wp-share-button__button {
+    background-color: nth(map-get($icons, 'feed'), 1);
+    border-color: nth(map-get($icons, 'feed'), 1);
+    color: #fff;
+    height: 20px;
+    min-height: auto;
+  }
+  .wp-share-button__icon {
+    color: #fff;
+  }
+  .wp-share-button__label {
+    font-weight: bold;
+  }
+}
+
+.wp-share-button--copy.wp-share-button--official {
+  @extend .wp-share-button--horizontal;
+  .wp-share-button__button {
+    background-color: nth(map-get($icons, 'copy'), 1);
+    border-color: nth(map-get($icons, 'copy'), 1);
+    color: #fff;
+    height: 20px;
+    min-height: auto;
+  }
+  .wp-share-button__icon {
+    color: #fff;
+  }
+  .wp-share-button__label {
+    font-weight: bold;
+  }
+}

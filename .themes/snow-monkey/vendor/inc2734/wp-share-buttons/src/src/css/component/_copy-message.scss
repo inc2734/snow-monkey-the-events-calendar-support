@@ -1,0 +1,21 @@
+.wp-share-buttons-copy-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(#000, .8);
+  border-radius: 3px;
+  color: #fff;
+  line-height: 1;
+  padding: .5em 1em .6em;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, .1);
+  animation: copy_message 1s ease .1s;
+  opacity: 0;
+  visibility: hidden;
+
+  @keyframes copy_message {
+    0% { opacity: 1; visibility: visible; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}

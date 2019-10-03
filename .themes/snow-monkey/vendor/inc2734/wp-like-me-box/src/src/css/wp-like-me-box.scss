@@ -1,0 +1,70 @@
+.wp-like-me-box {
+  display: flex;
+  background-color: #111;
+
+  &__figure {
+    flex: none;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    width: 40%;
+
+    @media (min-width: 40em) {
+      width: 50%;
+    }
+
+    > * {
+      vertical-align: top;
+      margin-top: 0.25rem;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 1rem;
+
+    @media (min-width: 40em) {
+      padding: 1.5rem;
+    }
+
+    > * {
+      flex: 1 0 100%;
+    }
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: 12px;
+    line-height: 1.33333;
+    color: #fff;
+    font-weight: bold;
+
+    @media (min-width: 40em) {
+      margin: 0 0 1.5rem;
+      font-size: 24px;
+    }
+  }
+
+  &__like {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: top;
+  }
+
+  &__lead {
+    margin: 1rem 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #ccc;
+
+    @media (min-width: 40em) {
+      margin: 1.5rem 0 0;
+      font-size: 14px;
+    }
+  }
+}

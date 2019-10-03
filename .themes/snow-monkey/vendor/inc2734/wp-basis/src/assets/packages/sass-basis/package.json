@@ -1,0 +1,126 @@
+{
+  "_from": "sass-basis@^9.3.2",
+  "_id": "sass-basis@9.3.2",
+  "_inBundle": false,
+  "_integrity": "sha512-fTj/i0w56z+hIP4XRUTE6jOoi6sB8+XfwFB97Vo12KgU2LsT4ds1KnNFKIG4ViShnMrk505FAyu4mxUAIi6LNg==",
+  "_location": "/sass-basis",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "sass-basis@^9.3.2",
+    "name": "sass-basis",
+    "escapedName": "sass-basis",
+    "rawSpec": "^9.3.2",
+    "saveSpec": null,
+    "fetchSpec": "^9.3.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sass-basis/-/sass-basis-9.3.2.tgz",
+  "_shasum": "6c6a8071884eec6875fd570950f58137b8a488c0",
+  "_spec": "sass-basis@^9.3.2",
+  "_where": "/Users/inc/github/wp-basis",
+  "author": {
+    "name": "inc2734"
+  },
+  "bugs": {
+    "url": "https://github.com/sass-basis/basis/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Toro_Unit"
+    },
+    {
+      "name": "qtamaki"
+    },
+    {
+      "name": "segayuu"
+    }
+  ],
+  "dependencies": {
+    "@inc2734/add-custom-event": "^0.1.0",
+    "@inc2734/for-each-html-nodes": "^0.2.0",
+    "html5shiv": "^3.7.3",
+    "node-normalize-scss": "^8.0.0"
+  },
+  "deprecated": false,
+  "description": "A lightweight responsive Sass/CSS framework based on flexible box.",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "cpy-cli": "^2.0.0",
+    "cssnano": "^4.1.10",
+    "node-aigis": "^1.4.1",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
+  },
+  "engines": {
+    "node": "^6.9 || ^8.9 || ^9 || ^10"
+  },
+  "files": [
+    "src",
+    "dist",
+    "tests",
+    "package.json",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "homepage": "https://sass-basis.github.io/",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "license": "MIT",
+  "main": "src/css/basis.scss",
+  "name": "sass-basis",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sass-basis/basis.git"
+  },
+  "scripts": {
+    "aigis": "npm run cleanup:aigis && aigis run -c src/aigis/aigis_config.yml && npm-run-all -p aigis:css aigis-ie9:css aigis:js",
+    "aigis-ie9:css": "npm-run-all -s aigis-ie9:css:*",
+    "aigis-ie9:css:postcss": "postcss dist/aigis/aigis_assets/css/basis-ie9.css -o dist/aigis/aigis_assets/css/basis-ie9.min.css -c=postcss.config.js",
+    "aigis-ie9:css:sass": "node-sass --include-path=node_modules/node-normalize-scss src/aigis/assets/css/basis-ie9.scss -o dist/aigis/aigis_assets/css",
+    "aigis:css": "npm-run-all -s aigis:css:*",
+    "aigis:css:postcss": "postcss dist/aigis/aigis_assets/css/style.css -o dist/aigis/aigis_assets/css/style.min.css -c=postcss.config.js",
+    "aigis:css:sass": "node-sass --include-path=node_modules/node-normalize-scss src/aigis/assets/css/style.scss -o dist/aigis/aigis_assets/css",
+    "aigis:js": "webpack src/aigis/assets/js/app.js -o dist/aigis/aigis_assets/js/app.min.js --config webpack.config.js",
+    "browsersync": "npm run aigis && browser-sync start -s 'dist/aigis' -f 'dist/aigis'",
+    "build": "npm-run-all -p css js font",
+    "cleanup:aigis": "rimraf dist/aigis && mkdir -p dist/aigis/aigis_assets",
+    "cleanup:css": "rimraf dist/css && mkdir -p dist/css",
+    "cleanup:font": "rimraf dist/font && mkdir -p dist/font",
+    "cleanup:js": "rimraf dist/js && mkdir -p dist/js",
+    "css": "npm run cleanup:css && npm-run-all -p css:*",
+    "css:basis": "npm-run-all -s css:basis:*",
+    "css:basis-ie9": "npm-run-all -s css:basis-ie9:*",
+    "css:basis-ie9:postcss": "postcss dist/css/plugin/basis-ie9/basis-ie9.css -o dist/css/plugin/basis-ie9/basis-ie9.min.css -c=postcss.config.js",
+    "css:basis-ie9:sass": "node-sass --include-path=node_modules/node-normalize-scss src/css/plugin/basis-ie9/basis-ie9.scss -o dist/css/plugin/basis-ie9",
+    "css:basis:postcss": "postcss dist/css/basis.css -o dist/css/basis.min.css -c=postcss.config.js",
+    "css:basis:sass": "node-sass --include-path=node_modules/node-normalize-scss src/css/basis.scss -o dist/css",
+    "font": "npm run cleanup:font && cpy '**' '../../dist/font' --cwd=src/font --parents",
+    "js": "npm run cleanup:js && npm-run-all -p js:*",
+    "js:basis": "webpack src/js/basis.js -o dist/js/basis.min.js --config webpack.config.js",
+    "prepublish": "npm run cleanup:aigis && npm run build",
+    "start": "npm run build",
+    "test": "node-sass tests -o tests",
+    "zip": "rimraf basis.zip && rsync -a --exclude '.*' --exclude '/basis/' --exclude '/node_modules/' --exclude '/bin/' ./ basis && cd basis && cd ../ && zip -9 -qmr basis.zip basis"
+  },
+  "version": "9.3.2"
+}

@@ -1,0 +1,53 @@
+.wp-share-buttons {
+  $root: &;
+
+  margin: 20px 0;
+  overflow: hidden;
+
+  &__list {
+    list-style: none;
+    margin: 0 -3px;
+    font-size: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 3px;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0;
+    vertical-align: top;
+    overflow: hidden;
+  }
+
+  /**
+   * Type: Block
+   */
+  &--block {
+    #{$root}__list {
+      margin: 0 -3px -6px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    #{$root}__item {
+      margin: 0;
+      padding: 0 3px 6px;
+      display: block;
+      flex: 0 0 auto;
+      width: 25%;
+    }
+  }
+
+  /**
+   * Type: Official
+   */
+  &--official {
+    #{$root}__item {
+      line-height: 1;
+      font-size: 0;
+      vertical-align: top;
+    }
+  }
+}

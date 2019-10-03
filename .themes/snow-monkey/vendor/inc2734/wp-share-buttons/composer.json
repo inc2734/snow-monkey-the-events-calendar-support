@@ -1,0 +1,38 @@
+{
+  "name": "inc2734/wp-share-buttons",
+  "description": "A library for WordPress theme that adds social share buttons.",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Takashi Kitajima",
+      "email": "inc@2inc.org",
+      "homepage": "https://2inc.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "inc2734/wp-ogp": "^2.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "wp-coding-standards/wpcs": "*",
+    "phpmd/phpmd": "2.*",
+    "phpunit/phpunit": "7.*",
+    "phpcompatibility/phpcompatibility-wp": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Inc2734\\WP_Share_Buttons\\" : "src"
+    }
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/phpcompatibility/phpcompatibility-paragonie,vendor/phpcompatibility/phpcompatibility-wp,vendor/wp-coding-standards/wpcs",
+      "vendor/bin/phpcs -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
+      "vendor/bin/phpmd ./ text phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
+      "bash bin/phpunit.sh"
+    ],
+    "phpcbf": "vendor/bin/phpcbf -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php"
+  }
+}

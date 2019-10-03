@@ -1,0 +1,63 @@
+@mixin wp-share-button-bottom-balloon($size, $background-color: #fff, $border-color: #ddd) {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  @include wp-share-button-bottom-triangle($size, $background-color, $border-color);
+}
+
+@mixin wp-share-button-left-balloon($size, $background-color: #fff, $border-color: #ddd) {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  @include wp-share-button-left-triangle($size, $background-color, $border-color);
+}
+
+@mixin wp-share-button-triangle-base() {
+  position: relative;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    height: 0;
+    width: 0;
+  }
+}
+
+@mixin wp-share-button-bottom-triangle($size, $background-color: #fff, $border-color: #ddd) {
+  @include wp-share-button-triangle-base();
+
+  &::before {
+    bottom: ($size * -1);
+    left: 50%;
+    margin-left: ($size * -1);
+    border-width: $size $size 0 $size;
+    border-color: $border-color transparent transparent transparent;
+  }
+
+  &::after {
+    bottom: (($size - 1) * -1);
+    left: 50%;
+    margin-left: ($size * -1);
+    border-width: $size $size 0 $size;
+    border-color: $background-color transparent transparent transparent;
+  }
+}
+
+@mixin wp-share-button-left-triangle($size, $background-color: #fff, $border-color: #ddd) {
+  @include wp-share-button-triangle-base();
+
+  &::before {
+    left: ($size * -1);
+    top: 50%;
+    margin-top: ($size * -1);
+    border-width: $size $size $size 0;
+    border-color: transparent $border-color transparent transparent;
+  }
+
+  &::after {
+    left: (($size - 1) * -1);
+    top: 50%;
+    margin-top: ($size * -1);
+    border-width: $size $size $size 0;
+    border-color: transparent $background-color transparent transparent;
+  }
+}

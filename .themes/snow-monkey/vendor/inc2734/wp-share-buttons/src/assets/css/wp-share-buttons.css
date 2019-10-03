@@ -1,0 +1,374 @@
+@charset "UTF-8";
+/**
+ * Share button icons
+ *
+ * @var map $icons
+ *            name: (color, content, show count)
+ */
+/**
+ * Font path
+ *
+ * @var string
+ */
+@font-face {
+  font-family: 'wp-share-buttons';
+  src: url("../font/wp-share-buttons.eot");
+  src: url("../font/wp-share-buttons.eot") format("embedded-opentype"), url("../font/wp-share-buttons.ttf") format("truetype"), url("../font/wp-share-buttons.woff") format("woff"), url("../font/wp-share-buttons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.wp-share-button {
+  /**
+   * Type: Balloon
+   */
+  /**
+   * Type: Horizontal
+   */
+  /**
+   * Type: Icon
+   */
+  /**
+   * Type: Block
+   */ }
+  .wp-share-button__count {
+    position: relative;
+    border-radius: 3px;
+    text-align: center; }
+  .wp-share-button__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none; }
+    .wp-share-button__button:hover {
+      background-color: #fff; }
+  .wp-share-button__icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 'wp-share-buttons';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+    .wp-share-button__icon--twitter {
+      color: #00acf2; }
+      .wp-share-button__icon--twitter::before {
+        content: ""; }
+    .wp-share-button__icon--facebook {
+      color: #4555ab; }
+      .wp-share-button__icon--facebook::before {
+        content: ""; }
+    .wp-share-button__icon--hatena {
+      color: #008be2; }
+      .wp-share-button__icon--hatena::before {
+        content: ""; }
+    .wp-share-button__icon--google-plus {
+      color: #d9453d; }
+      .wp-share-button__icon--google-plus::before {
+        content: ""; }
+    .wp-share-button__icon--feedly {
+      color: #6cc655; }
+      .wp-share-button__icon--feedly::before {
+        content: ""; }
+    .wp-share-button__icon--pocket {
+      color: #ff002d; }
+      .wp-share-button__icon--pocket::before {
+        content: ""; }
+    .wp-share-button__icon--pinterest {
+      color: #bb0f23; }
+      .wp-share-button__icon--pinterest::before {
+        content: ""; }
+    .wp-share-button__icon--line {
+      color: #00b900; }
+      .wp-share-button__icon--line::before {
+        content: ""; }
+    .wp-share-button__icon--feed {
+      color: #ff9900; }
+      .wp-share-button__icon--feed::before {
+        content: ""; }
+    .wp-share-button__icon--copy {
+      color: #333333; }
+      .wp-share-button__icon--copy::before {
+        content: ""; }
+  .wp-share-button__label {
+    margin-left: 3px; }
+  .wp-share-button--balloon {
+    width: 92px; }
+    .wp-share-button--balloon .wp-share-button__count {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      position: relative;
+      font-size: 16px;
+      margin: 0 0 6px;
+      padding: 4px 10px; }
+      .wp-share-button--balloon .wp-share-button__count::before, .wp-share-button--balloon .wp-share-button__count::after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        height: 0;
+        width: 0; }
+      .wp-share-button--balloon .wp-share-button__count::before {
+        bottom: -5px;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px 5px 0 5px;
+        border-color: #ddd transparent transparent transparent; }
+      .wp-share-button--balloon .wp-share-button__count::after {
+        bottom: -4px;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px 5px 0 5px;
+        border-color: #fff transparent transparent transparent; }
+    .wp-share-button--balloon .wp-share-button__button {
+      padding: 3px 6px;
+      line-height: 1.2; }
+  .wp-share-button--horizontal, .wp-share-button--feed.wp-share-button--official, .wp-share-button--copy.wp-share-button--official {
+    display: flex;
+    flex-flow: row-reverse; }
+    .wp-share-button--horizontal .wp-share-button__count, .wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--copy.wp-share-button--official .wp-share-button__count {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      position: relative;
+      float: right;
+      font-size: 11px;
+      padding: 1px 5px; }
+      .wp-share-button--horizontal .wp-share-button__count::before, .wp-share-button--feed.wp-share-button--official .wp-share-button__count::before, .wp-share-button--copy.wp-share-button--official .wp-share-button__count::before, .wp-share-button--horizontal .wp-share-button__count::after, .wp-share-button--feed.wp-share-button--official .wp-share-button__count::after, .wp-share-button--copy.wp-share-button--official .wp-share-button__count::after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        height: 0;
+        width: 0; }
+      .wp-share-button--horizontal .wp-share-button__count::before, .wp-share-button--feed.wp-share-button--official .wp-share-button__count::before, .wp-share-button--copy.wp-share-button--official .wp-share-button__count::before {
+        left: -5px;
+        top: 50%;
+        margin-top: -5px;
+        border-width: 5px 5px 5px 0;
+        border-color: transparent #ddd transparent transparent; }
+      .wp-share-button--horizontal .wp-share-button__count::after, .wp-share-button--feed.wp-share-button--official .wp-share-button__count::after, .wp-share-button--copy.wp-share-button--official .wp-share-button__count::after {
+        left: -4px;
+        top: 50%;
+        margin-top: -5px;
+        border-width: 5px 5px 5px 0;
+        border-color: transparent #fff transparent transparent; }
+    .wp-share-button--horizontal .wp-share-button__button, .wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+      float: left;
+      margin-right: 5px;
+      line-height: 16px;
+      padding: 1px 7px 1px 5px;
+      min-height: 23px; }
+    .wp-share-button--horizontal.wp-share-button--google-plus .wp-share-button__button, .wp-share-button--google-plus.wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--google-plus.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--google-plus .wp-share-button__count, .wp-share-button--google-plus.wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--google-plus.wp-share-button--copy.wp-share-button--official .wp-share-button__count {
+      display: none; }
+    .wp-share-button--horizontal.wp-share-button--pocket .wp-share-button__button, .wp-share-button--pocket.wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--pocket.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--pocket .wp-share-button__count, .wp-share-button--pocket.wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--pocket.wp-share-button--copy.wp-share-button--official .wp-share-button__count {
+      display: none; }
+    .wp-share-button--horizontal.wp-share-button--pinterest .wp-share-button__button, .wp-share-button--pinterest.wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--pinterest.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--pinterest .wp-share-button__count, .wp-share-button--pinterest.wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--pinterest.wp-share-button--copy.wp-share-button--official .wp-share-button__count {
+      display: none; }
+    .wp-share-button--horizontal.wp-share-button--line .wp-share-button__button, .wp-share-button--line.wp-share-button--feed.wp-share-button--official .wp-share-button__button, .wp-share-button--line.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--line .wp-share-button__count, .wp-share-button--line.wp-share-button--feed.wp-share-button--official .wp-share-button__count, .wp-share-button--line.wp-share-button--copy.wp-share-button--official .wp-share-button__count {
+      display: none; }
+    .wp-share-button--horizontal.wp-share-button--feed .wp-share-button__button, .wp-share-button--feed.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--feed .wp-share-button__count, .wp-share-button--feed.wp-share-button--official .wp-share-button__count {
+      display: none; }
+    .wp-share-button--horizontal.wp-share-button--copy .wp-share-button__button, .wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+      margin-right: 0; }
+    .wp-share-button--horizontal.wp-share-button--copy .wp-share-button__count, .wp-share-button--copy.wp-share-button--official .wp-share-button__count {
+      display: none; }
+  .wp-share-button--icon .wp-share-button__count,
+  .wp-share-button--icon .wp-share-button__label {
+    display: none; }
+  .wp-share-button--icon .wp-share-button__button {
+    height: 32px;
+    width: 32px;
+    border: none; }
+  .wp-share-button--icon.wp-share-button--twitter .wp-share-button__button {
+    background-color: #00acf2; }
+  .wp-share-button--icon.wp-share-button--facebook .wp-share-button__button {
+    background-color: #4555ab; }
+  .wp-share-button--icon.wp-share-button--hatena .wp-share-button__button {
+    background-color: #008be2; }
+  .wp-share-button--icon.wp-share-button--google-plus .wp-share-button__button {
+    background-color: #d9453d; }
+  .wp-share-button--icon.wp-share-button--feedly .wp-share-button__button {
+    background-color: #6cc655; }
+  .wp-share-button--icon.wp-share-button--pocket .wp-share-button__button {
+    background-color: #ff002d; }
+  .wp-share-button--icon.wp-share-button--pinterest .wp-share-button__button {
+    background-color: #bb0f23; }
+  .wp-share-button--icon.wp-share-button--line .wp-share-button__button {
+    background-color: #00b900; }
+  .wp-share-button--icon.wp-share-button--feed .wp-share-button__button {
+    background-color: #ff9900; }
+  .wp-share-button--icon.wp-share-button--copy .wp-share-button__button {
+    background-color: #333333; }
+  .wp-share-button--icon .wp-share-button__icon {
+    color: #fff;
+    font-size: 18px; }
+  .wp-share-button--block {
+    position: relative; }
+    .wp-share-button--block:hover .wp-share-button__button, .wp-share-button--block:active .wp-share-button__button, .wp-share-button--block:focus .wp-share-button__button {
+      border-bottom: none !important; }
+    .wp-share-button--block:hover .wp-share-button__count, .wp-share-button--block:active .wp-share-button__count, .wp-share-button--block:focus .wp-share-button__count {
+      bottom: 5px; }
+    .wp-share-button--block .wp-share-button__label {
+      display: none; }
+    .wp-share-button--block .wp-share-button__count {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      color: #fff;
+      font-size: 11px; }
+    .wp-share-button--block .wp-share-button__button {
+      height: 40px;
+      width: auto;
+      border: none; }
+    .wp-share-button--block.wp-share-button--twitter .wp-share-button__button {
+      background-color: #00acf2;
+      border-bottom: 5px solid #0093ce; }
+    .wp-share-button--block.wp-share-button--facebook .wp-share-button__button {
+      background-color: #4555ab;
+      border-bottom: 5px solid #3b4892; }
+    .wp-share-button--block.wp-share-button--hatena .wp-share-button__button {
+      background-color: #008be2;
+      border-bottom: 5px solid #0075be; }
+    .wp-share-button--block.wp-share-button--google-plus .wp-share-button__button {
+      background-color: #d9453d;
+      border-bottom: 5px solid #cb3028; }
+    .wp-share-button--block.wp-share-button--google-plus .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block.wp-share-button--feedly .wp-share-button__button {
+      background-color: #6cc655;
+      border-bottom: 5px solid #57b93e; }
+    .wp-share-button--block.wp-share-button--pocket .wp-share-button__button {
+      background-color: #ff002d;
+      border-bottom: 5px solid #db0027; }
+    .wp-share-button--block.wp-share-button--pocket .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block.wp-share-button--pinterest .wp-share-button__button {
+      background-color: #bb0f23;
+      border-bottom: 5px solid #9a0c1d; }
+    .wp-share-button--block.wp-share-button--pinterest .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block.wp-share-button--line .wp-share-button__button {
+      background-color: #00b900;
+      border-bottom: 5px solid #009500; }
+    .wp-share-button--block.wp-share-button--line .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block.wp-share-button--feed .wp-share-button__button {
+      background-color: #ff9900;
+      border-bottom: 5px solid #db8400; }
+    .wp-share-button--block.wp-share-button--feed .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block.wp-share-button--copy .wp-share-button__button {
+      background-color: #333333;
+      border-bottom: 5px solid #212121; }
+    .wp-share-button--block.wp-share-button--copy .wp-share-button__count {
+      display: none; }
+    .wp-share-button--block .wp-share-button__icon {
+      color: #fff;
+      font-size: 18px; }
+
+.wp-share-buttons--official .pocket-btn {
+  margin-right: -3px;
+  margin-left: -3px; }
+
+.wp-share-button--feed.wp-share-button--official .wp-share-button__button {
+  background-color: #ff9900;
+  border-color: #ff9900;
+  color: #fff;
+  height: 20px;
+  min-height: auto; }
+
+.wp-share-button--feed.wp-share-button--official .wp-share-button__icon {
+  color: #fff; }
+
+.wp-share-button--feed.wp-share-button--official .wp-share-button__label {
+  font-weight: bold; }
+
+.wp-share-button--copy.wp-share-button--official .wp-share-button__button {
+  background-color: #333333;
+  border-color: #333333;
+  color: #fff;
+  height: 20px;
+  min-height: auto; }
+
+.wp-share-button--copy.wp-share-button--official .wp-share-button__icon {
+  color: #fff; }
+
+.wp-share-button--copy.wp-share-button--official .wp-share-button__label {
+  font-weight: bold; }
+
+.wp-share-buttons {
+  margin: 20px 0;
+  overflow: hidden;
+  /**
+   * Type: Block
+   */
+  /**
+   * Type: Official
+   */ }
+  .wp-share-buttons__list {
+    list-style: none;
+    margin: 0 -3px;
+    font-size: 0;
+    padding: 0; }
+  .wp-share-buttons__item {
+    margin: 3px;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0;
+    vertical-align: top;
+    overflow: hidden; }
+  .wp-share-buttons--block .wp-share-buttons__list {
+    margin: 0 -3px -6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+  .wp-share-buttons--block .wp-share-buttons__item {
+    margin: 0;
+    padding: 0 3px 6px;
+    display: block;
+    flex: 0 0 auto;
+    width: 25%; }
+  .wp-share-buttons--official .wp-share-buttons__item {
+    line-height: 1;
+    font-size: 0;
+    vertical-align: top; }
+
+.wp-share-buttons-copy-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  color: #fff;
+  line-height: 1;
+  padding: .5em 1em .6em;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  animation: copy_message 1s ease .1s;
+  opacity: 0;
+  visibility: hidden; }
+
+@keyframes copy_message {
+  0% {
+    opacity: 1;
+    visibility: visible; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }

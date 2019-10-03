@@ -1,0 +1,38 @@
+.wpaw-pickup-slider {
+  &__canvas {
+    visibility: hidden;
+
+    &.slick-initialized {
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    text-decoration: none;
+
+    .wpaw-pickup-slider__figure {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__figure {
+    @include cover-img();
+    display: block;
+    background-color: #111;
+  }
+
+  &__item-content {
+    position: relative;
+    color: #fff;
+  }
+
+  .slick-list {
+    height: auto !important;
+  }
+}

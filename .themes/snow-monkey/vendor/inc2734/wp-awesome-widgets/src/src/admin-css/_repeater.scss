@@ -1,0 +1,28 @@
+.wpaw-repeaters__item {
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: move;
+}
+
+.wpaw-repeaters__item:first-child {
+  display: none;
+}
+
+.wpaw-repeaters__item > * {
+  margin: 0;
+}
+
+.wpaw-repeaters__item > * + * {
+  margin-top: 1em;
+}
+
+.wpaw-repeaters__add-repeater-btn {
+  margin: 0 0 10px !important;
+  width: 100%;
+}
+
+.wpaw-repeaters__item-controls {
+  margin-top: .25em;
+}

@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Snow Monkey The Events Calendar Support\n"
+"POT-Creation-Date: 2019-10-03 10:57+0900\n"
+"PO-Revision-Date: 2019-10-03 10:59+0900\n"
+"Last-Translator: inc2734 <inc@2inc.org>\n"
+"Language-Team: inc2734 <inc@2inc.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: snow-monkey-the-events-calendar-support.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: .themes\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: vendor\n"
+
+#: App/Controller/Front.php:105
+msgid "Events"
+msgstr "イベント"
+
+#: snow-monkey-the-events-calendar-support.php:82
+msgid "[Snow Monkey The Events Calendar Support] Needs the Snow Monkey."
+msgstr "[Snow Monkey The Events Calendar Support] Snow Monkeyが必要です。"
+
+#: snow-monkey-the-events-calendar-support.php:97
+msgid ""
+"[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v7.13.0 or "
+"more."
+msgstr ""
+"[Snow Monkey The Events Calendar Support] Snow Monkey v7.13.0以降が必要で"
+"す。"
+
+#: snow-monkey-the-events-calendar-support.php:112
+msgid "[Snow Monkey The Events Calendar Support] Needs The Events Calendar."
+msgstr ""
+"[Snow Monkey The Events Calendar Support] The Events Calendar が必要です。"
+
+#. Plugin Name of the plugin/theme
+msgid "Snow Monkey The Events Calendar Support"
+msgstr "Snow Monkey The Events Calendar Support"
+
+#. Description of the plugin/theme
+msgid "With this plugin, Snow Monkey can use The Events Calendar plugin."
+msgstr ""
+"このプラグインを使用すると、Snow Monkey は The Events Calendar plugin を使"
+"用できます。"
+
+#. Author of the plugin/theme
+msgid "inc2734"
+msgstr "inc2734"
+
+#. Author URI of the plugin/theme
+msgid "https://2inc.org"
+msgstr "https://2inc.org"

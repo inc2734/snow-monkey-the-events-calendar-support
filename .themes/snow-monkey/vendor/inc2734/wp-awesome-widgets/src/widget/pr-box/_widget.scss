@@ -1,0 +1,68 @@
+.wpaw-pr-box {
+  /**
+   * Overwrite with theme css
+   */
+  &--chameleon {
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__lead {
+    text-align: center;
+  }
+
+  /**
+   * Overwrite with theme css
+   *
+   * &__row--<size>
+   * &__row--md-<size>
+   * &__row--lg-<size>
+   */
+  &__row {
+  }
+
+  /**
+   * Overwrite with theme css
+   */
+  &__item {
+  }
+
+  &__item-figure {
+    @include cover-img();
+    background-color: #eee;
+
+    &::before {
+      content: '';
+      display: block;
+    }
+
+    &--4to3 {
+      &::before {
+        padding-top: 75%;
+      }
+    }
+
+    &--16to9 {
+      &::before {
+        padding-top: 56.25%;
+      }
+    }
+  }
+
+  &__item-title {
+    font-weight: bold;
+  }
+
+  &__item-summary {
+  }
+
+  &__item-action {
+    text-align: center;
+  }
+
+  &__action {
+    text-align: center;
+  }
+}

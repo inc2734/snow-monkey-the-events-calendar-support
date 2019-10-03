@@ -1,0 +1,17 @@
+@import 'variable/variable';
+
+@font-face {
+  font-family: 'wp-share-buttons';
+  src: url('#{$wp-share-buttons-font-path}/font/wp-share-buttons.eot');
+  src: url('#{$wp-share-buttons-font-path}/font/wp-share-buttons.eot')  format('embedded-opentype'),
+       url('#{$wp-share-buttons-font-path}/font/wp-share-buttons.ttf')  format('truetype'),
+       url('#{$wp-share-buttons-font-path}/font/wp-share-buttons.woff') format('woff'),
+       url('#{$wp-share-buttons-font-path}/font/wp-share-buttons.svg')  format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'mixin/mixin';
+@import 'component/button';
+@import 'component/buttons';
+@import 'component/copy-message';

@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: inc2734-wp-awesome-widgets\n"
+"Report-Msgid-Bugs-To: https://make.wordpress.org/polyglots/\n"
+"POT-Creation-Date: 2019-03-05 01:40:39+00:00\n"
+"PO-Revision-Date: 2019-03-05 10:41+0900\n"
+"Last-Translator: inc2734 <inc@2inc.org>\n"
+"Language-Team: Takashi Kitajima <inc@2inc.org>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: widget/any-posts/_form.php:11 widget/carousel-any-posts/_form.php:11
+#: widget/pr-box/_form.php:11 widget/pr-box/_form.php:69
+#: widget/ranking/_form.php:11 widget/recent-posts/_form.php:11
+#: widget/showcase/_form.php:11 widget/slider/_form.php:37
+#: widget/taxonomy-posts/_form.php:11
+msgid "Title"
+msgstr "タイトル"
+
+#: widget/any-posts/_form.php:23 widget/carousel-any-posts/_form.php:23
+#: widget/ranking/_form.php:23 widget/recent-posts/_form.php:22
+msgid "Post type"
+msgstr "投稿タイプ"
+
+#: widget/any-posts/_form.php:68 widget/carousel-any-posts/_form.php:68
+#: widget/ranking/_form.php:68
+msgid "Refresh"
+msgstr "更新"
+
+#: widget/any-posts/_form.php:90 widget/ranking/_form.php:90
+#: widget/recent-posts/_form.php:68 widget/taxonomy-posts/_form.php:97
+msgid "Show thumbnail"
+msgstr "サムネイルを表示"
+
+#: widget/any-posts/_form.php:102 widget/ranking/_form.php:102
+#: widget/recent-posts/_form.php:80
+msgid "Show taxonomy"
+msgstr "分類を表示"
+
+#: widget/any-posts/any-posts.php:27
+msgid "WPAW: Any Posts"
+msgstr "WPAW: 任意の投稿"
+
+#: widget/carousel-any-posts/carousel-any-posts.php:25
+msgid "WPAW: Carousel ( Any Posts )"
+msgstr "WPAW: カルーセル（任意の投稿）"
+
+#: widget/contents-outline/_form.php:11
+msgid "Show headings"
+msgstr "見出しを表示"
+
+#: widget/contents-outline/_form.php:36
+msgid "Also show on mobile"
+msgstr "モバイルでも表示"
+
+#: widget/contents-outline/contents-outline.php:24
+msgid "WPAW: Contents outline"
+msgstr "WPAW: 目次"
+
+#: widget/google-adsense/_form.php:11
+msgid "Adsense code"
+msgstr "アドセンスコード"
+
+#: widget/google-adsense/_form.php:19
+msgid "Past the code of the responsive ad unit."
+msgstr "レスポンシブ広告ユニットのコードを貼り付けてください。"
+
+#: widget/google-adsense/_form.php:20
+msgid "Paste only the ins tag."
+msgstr "ins タグだけを貼り付けてください。"
+
+#: widget/google-adsense/_form.php:25
+msgid "Size"
+msgstr "サイズ"
+
+#: widget/google-adsense/_form.php:33
+msgid "Auto"
+msgstr "自動"
+
+#: widget/google-adsense/_form.php:34
+msgid "Big banner (728 x 90)"
+msgstr "ビッグバナー (728 x 90)"
+
+#: widget/google-adsense/_form.php:35
+msgid "Rectangle big (336 x 280)"
+msgstr "レクタングル 大 (336 x 280)"
+
+#: widget/google-adsense/_form.php:36
+msgid "Large mobile banner (320 x 100)"
+msgstr "ラージモバイルバナー (320 x 100)"
+
+#: widget/google-adsense/_form.php:37
+msgid "Large skyscraper (300 x 600)"
+msgstr "ラージ スカイスクレイパー (300 x 600)"
+
+#: widget/google-adsense/_form.php:38
+msgid "Rectangle (300 x 250)"
+msgstr "レクタングル (300 x 250)"
+
+#: widget/google-adsense/_form.php:39
+msgid "Rectangle big (336 x 280) two"
+msgstr "レクタングル大 (336 x 280) 2個"
+
+#: widget/google-adsense/_form.php:40
+msgid "Rectangle (300 x 250) two"
+msgstr "レクタングル (300 x 250) 2個"
+
+#: widget/google-adsense/_form.php:41
+msgid "Link unit"
+msgstr "リンクユニット"
+
+#: widget/google-adsense/google-adsense.php:22
+msgid "WPAW: Google Adsense"
+msgstr "WPAW: Google アドセンス"
+
+#: widget/local-nav/_form.php:11
+msgid "Direction"
+msgstr "方向"
+
+#: widget/local-nav/_form.php:19
+msgid "Vertical"
+msgstr "垂直方向"
+
+#: widget/local-nav/_form.php:20
+msgid "Horizontal"
+msgstr "水平方向"
+
+#: widget/local-nav/_form.php:40
+msgid "Display the page title of the top-level"
+msgstr "トップレベルのページのタイトルを表示"
+
+#: widget/local-nav/_form.php:52
+msgid "Display only when you have descendants"
+msgstr "子孫があるときだけ表示"
+
+#: widget/local-nav/local-nav.php:25
+msgid "WPAW: Local Navigation"
+msgstr "WPAW: ローカルナビゲーション"
+
+#: widget/pickup-slider/_form.php:11
+msgid "Posts tagged as \"pickup\" are displayed as slider."
+msgstr "「pickup」タグが付与された記事をスライダーとして表示します。"
+
+#: widget/pickup-slider/_form.php:23
+msgid "Display in random order"
+msgstr "ランダムな順序で表示"
+
+#: widget/pickup-slider/_form.php:27
+msgid "Link type"
+msgstr "リンクの種類"
+
+#: widget/pickup-slider/_form.php:35
+msgid "Button link"
+msgstr "ボタンリンク"
+
+#: widget/pickup-slider/_form.php:36
+msgid "Overall link"
+msgstr "全体リンク"
+
+#: widget/pickup-slider/_widget.php:97
+msgid "READ MORE"
+msgstr "READ MORE"
+
+#: widget/pickup-slider/pickup-slider.php:24
+msgid "WPAW: Pickup slider"
+msgstr "WPAW: ピックアップスライダー"
+
+#: widget/pr-box/_form.php:22 widget/showcase/_form.php:22
+msgid "Lead"
+msgstr "リード文"
+
+#: widget/pr-box/_form.php:32
+msgid "Background color"
+msgstr "背景色"
+
+#: widget/pr-box/_form.php:52 widget/showcase/_form.php:58
+#: widget/showcase/_form.php:113 widget/slider/_form.php:20
+msgid "Set image"
+msgstr "画像を設定"
+
+#: widget/pr-box/_form.php:55 widget/showcase/_form.php:61
+#: widget/showcase/_form.php:116 widget/slider/_form.php:23
+msgid "Unset"
+msgstr "解除"
+
+#: widget/pr-box/_form.php:80 widget/slider/_form.php:48
+msgid "Summary"
+msgstr "概要"
+
+#: widget/pr-box/_form.php:90 widget/pr-box/_form.php:209
+#: widget/showcase/_form.php:130 widget/slider/_form.php:58
+msgid "Link URL"
+msgstr "リンク URL"
+
+#: widget/pr-box/_form.php:101 widget/pr-box/_form.php:220
+#: widget/showcase/_form.php:141 widget/slider/_form.php:69
+msgid "Link text"
+msgstr "リンクテキスト"
+
+#: widget/pr-box/_form.php:112 widget/slider/_form.php:135
+msgid "Delete"
+msgstr "削除"
+
+#: widget/pr-box/_form.php:119
+msgid "Add Item"
+msgstr "項目を追加"
+
+#: widget/pr-box/_form.php:124
+msgid "Thumbnail aspect ratio"
+msgstr "サムネイルのアスペクト比"
+
+#: widget/pr-box/_form.php:143
+msgid "Column size for mobile"
+msgstr "モバイルのカラムサイズ"
+
+#: widget/pr-box/_form.php:151 widget/pr-box/_form.php:173
+#: widget/pr-box/_form.php:195
+msgid "1 column"
+msgstr "1カラム"
+
+#: widget/pr-box/_form.php:152 widget/pr-box/_form.php:174
+#: widget/pr-box/_form.php:196
+msgid "2 columns"
+msgstr "2カラム"
+
+#: widget/pr-box/_form.php:153 widget/pr-box/_form.php:175
+#: widget/pr-box/_form.php:197
+msgid "3 columns"
+msgstr "3カラム"
+
+#: widget/pr-box/_form.php:154 widget/pr-box/_form.php:176
+#: widget/pr-box/_form.php:198
+msgid "4 columns"
+msgstr "4カラム"
+
+#: widget/pr-box/_form.php:155 widget/pr-box/_form.php:177
+#: widget/pr-box/_form.php:199
+msgid "5 columns"
+msgstr "5カラム"
+
+#: widget/pr-box/_form.php:165
+msgid "Column size for tablet"
+msgstr "タブレットのカラムサイズ"
+
+#: widget/pr-box/_form.php:187
+msgid "Column size for PC"
+msgstr "PCのカラムサイズ"
+
+#: widget/pr-box/_form.php:239
+msgid "Remove side padding"
+msgstr "左右余白を削除"
+
+#: widget/pr-box/pr-box.php:41
+msgid "WPAW: PR Box"
+msgstr "WPAW: PR ボックス"
+
+#: widget/profile-box/profile-box.php:21
+msgid "WPAW: Profile box"
+msgstr "WPAW: プロフィールボックス"
+
+#: widget/ranking/ranking.php:27
+msgid "WPAW: Ranking (Manual update)"
+msgstr "WPAW: ランキング（手動更新）"
+
+#: widget/recent-posts/_form.php:48 widget/taxonomy-posts/_form.php:77
+msgid "Number of posts"
+msgstr "表示する投稿数"
+
+#: widget/recent-posts/recent-posts.php:27
+msgid "WPAW: Recent posts"
+msgstr "WPAW: 最近の投稿"
+
+#: widget/showcase/_form.php:32
+msgid "Format"
+msgstr "フォーマット"
+
+#: widget/showcase/_form.php:52
+msgid "Background image"
+msgstr "背景画像"
+
+#: widget/showcase/_form.php:75 widget/slider/_form.php:80
+msgid "Background mask color"
+msgstr "背景マスクの色"
+
+#: widget/showcase/_form.php:86 widget/slider/_form.php:91
+msgid "Background mask transparency"
+msgstr "背景マスクの透明度"
+
+#: widget/showcase/_form.php:96 widget/slider/_form.php:105
+msgid "Text color"
+msgstr "文字色"
+
+#: widget/showcase/_form.php:107
+msgid "Thumbnail"
+msgstr "サムネイル"
+
+#: widget/showcase/showcase.php:32
+msgid "WPAW: Showcase"
+msgstr "WPAW: ショーケース"
+
+#: widget/site-branding/_form.php:11
+msgid "Site description"
+msgstr "サイトの説明"
+
+#: widget/site-branding/_form.php:19
+msgid "HTML use allowed."
+msgstr "HTML 使用可"
+
+#: widget/site-branding/site-branding.php:23
+msgid "WPAW: Site branding"
+msgstr "WPAW: サイトブランディング"
+
+#: widget/slider/_form.php:116
+msgid "Button type"
+msgstr "ボタンの種類"
+
+#: widget/slider/_form.php:124
+msgid "Normal button"
+msgstr "ノーマルボタン"
+
+#: widget/slider/_form.php:125
+msgid "Ghost button"
+msgstr "ゴースト ボタン"
+
+#: widget/slider/_form.php:142
+msgid "Add slider"
+msgstr "スライダーを追加"
+
+#: widget/slider/_form.php:147
+msgid "Slider type"
+msgstr "スライダーの種類"
+
+#: widget/slider/_form.php:155
+msgid "Fade"
+msgstr "フェード"
+
+#: widget/slider/_form.php:156
+msgid "Slide"
+msgstr "スライド"
+
+#: widget/slider/_form.php:166
+msgid "Animation time"
+msgstr "アニメーション時間"
+
+#: widget/slider/_form.php:179
+msgid "Interval time"
+msgstr "インターバル"
+
+#: widget/slider/_form.php:192
+msgid "Number of slides to display at once(PC)"
+msgstr "1度に表示するスライド数（PC）"
+
+#: widget/slider/_form.php:205
+msgid "Number of slides to slide at once(PC)"
+msgstr "1度にスライドするスライド数（PC）"
+
+#: widget/slider/slider.php:40
+msgid "WPAW: Slider"
+msgstr "WPAW: スライダー"
+
+#: widget/taxonomy-posts/_form.php:41
+msgid "Displayed term"
+msgstr "表示するターム"
+
+#: widget/taxonomy-posts/taxonomy-posts.php:24
+msgid "WPAW: Taxonomy posts"
+msgstr "WPAW: 任意のタクソノミーの投稿"
+
+#~ msgid "Size of image to use"
+#~ msgstr "使用する画像のサイズ"
+
+#~ msgid "Slides to show"
+#~ msgstr "表示するスライド数"
+
+#~ msgid "Slides to scroll"
+#~ msgstr "スクロールするスライド数"
+
+#~ msgid "Horizontal alignment of text"
+#~ msgstr "テキストの水平位置"
+
+#~ msgid "Horizontal alignment of thumbnail"
+#~ msgstr "サムネイルの位置"

@@ -1,0 +1,59 @@
+# Copyright (C) 2017 {package-name}
+# This file is distributed under the same license as the {package-name} package.
+msgid ""
+msgstr ""
+"Project-Id-Version: inc2734-wp-share-buttons\n"
+"Report-Msgid-Bugs-To: https://make.wordpress.org/polyglots/\n"
+"POT-Creation-Date: 2018-11-17 07:00:22+00:00\n"
+"PO-Revision-Date: 2018-11-17 16:01+0900\n"
+"Last-Translator: inc2734 <inc@2inc.org>\n"
+"Language-Team: Takashi Kitajima <inc@2inc.org>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: view/copy/copy.php:18
+msgid "Copy"
+msgstr "コピー"
+
+#: view/facebook/facebook.php:21
+msgid "Share"
+msgstr "シェア"
+
+#: view/feed/feed.php:16
+msgid "Feed"
+msgstr "フィード"
+
+#: view/feedly/feedly.php:21 view/feedly/official.php:9
+msgid "Feedly"
+msgstr "Feedly"
+
+#: view/google-plus/google-plus.php:16
+msgid "Google+"
+msgstr "Google+"
+
+#: view/hatena/hatena.php:21 view/hatena/official.php:15
+#: view/hatena/official.php:16
+msgid "Bookmark"
+msgstr "ブックマーク"
+
+#: view/line/line.php:16
+msgid "LINE"
+msgstr "LINE"
+
+#: view/pinterest/pinterest.php:16
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: view/pocket/pocket.php:16
+msgid "Pocket"
+msgstr "Pocket"
+
+#: view/twitter/official.php:8 view/twitter/twitter.php:21
+msgid "Tweet"
+msgstr "ツイート"

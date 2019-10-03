@@ -1,0 +1,39 @@
+{
+  "name": "inc2734/wp-like-me-box",
+  "description": "A library for WordPress that added Facebook like me box for article.",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=5.6"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "wp-coding-standards/wpcs": "*",
+    "phpmd/phpmd": "2.*",
+    "phpunit/phpunit": "^5.7",
+    "doctrine/instantiator": "1.0.4",
+    "phpunit/php-token-stream": "1.4.11",
+    "phpdocumentor/reflection-docblock": "3.2.2",
+    "symfony/yaml": "3.4.1",
+    "pdepend/pdepend": "2.5.0",
+    "myclabs/deep-copy": "1.7.0"
+  },
+  "authors": [
+    {
+      "name": "Takashi Kitajima",
+      "email": "inc@2inc.org"
+    }
+  ],
+  "autoload": {
+    "psr-4" : {
+      "Inc2734\\WP_Like_Me_Box\\" : "src"
+    }
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+      "vendor/bin/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php",
+      "vendor/bin/phpmd ./ text phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
+      "bash bin/phpunit.sh"
+    ]
+  }
+}

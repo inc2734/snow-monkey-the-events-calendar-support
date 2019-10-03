@@ -1,0 +1,59 @@
+/*
+---
+name: .c-form-control
+category:
+  - object/component
+  - object/component/form-control
+---
+Form control component
+
+### html
+```html
+<input type="text" class="c-form-control">
+```
+```html
+<textarea class="c-form-control"></textarea>
+```
+```html
+<div class="c-form-control c-form-control--has-icon">
+  <div class="c-form-control__icon">
+    ●
+  </div>
+  <input type="text">
+</div>
+```
+```html
+<input type="text" class="c-form-control" disabled>
+```
+```html
+<input type="text" class="c-form-control" readonly>
+```
+*/
+
+.#{$_prefix}c-form-control {
+  @include _form-control();
+
+  &--has-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > * {
+      flex: 1 1 0%;
+    }
+
+    > .#{$_prefix}c-form-control__icon {
+      flex: 0 0 0%;
+      margin-right: .5em;
+    }
+  }
+
+  &[disabled] {
+    background-color: _lighter($_color-gray);
+    cursor: not-allowed;
+  }
+
+  &[readonly] {
+    background-color: _lighter($_color-gray);
+  }
+}
