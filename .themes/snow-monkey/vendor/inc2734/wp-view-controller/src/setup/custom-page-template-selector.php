@@ -5,6 +5,7 @@
  * @license GPL-2.0+
  */
 
+use Inc2734\WP_View_Controller\App\Config;
 use Inc2734\WP_View_Controller\Helper;
 
 add_action(
@@ -20,11 +21,11 @@ add_action(
 		 * @return array [{ Relative path from the theme => label }]
 		 */
 		add_filter(
-			"theme_templates",
+			'theme_templates',
 			function( $post_templates, $wp_theme, $post, $post_type ) {
 				$hierarchy = Helper::get_template_part_root_hierarchy();
 				foreach ( $hierarchy as $root ) {
-					$page_templates_dirs = Helper::config( 'page-templates' );
+					$page_templates_dirs = Config::get( 'page-templates' );
 					foreach ( $page_templates_dirs as $page_templates_dir ) {
 						$custom_page_templates = glob( trailingslashit( $root ) . trailingslashit( $page_templates_dir ) . '*.php' );
 						foreach ( $custom_page_templates as $custom_page_template ) {
@@ -41,11 +42,11 @@ add_action(
 								]
 							);
 
-							if ( ! empty( $custom_page_template_data[ 'template-name' ] ) ) {
-								$template_post_types = $custom_page_template_data[ 'template-post-type' ];
+							if ( ! empty( $custom_page_template_data['template-name'] ) ) {
+								$template_post_types = $custom_page_template_data['template-post-type'];
 								$template_post_types = $template_post_types ? array_map( 'trim', explode( ',', $template_post_types ) ) : [ 'page' ];
 								if ( in_array( $post_type, $template_post_types ) ) {
-									$post_templates[ $base_path ] = $custom_page_template_data[ 'template-name' ];
+									$post_templates[ $base_path ] = $custom_page_template_data['template-name'];
 								}
 							}
 						}

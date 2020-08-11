@@ -21,30 +21,5 @@ class GooglePlus extends Base {
 	 * @return void
 	 */
 	public function _shortcode( $attributes ) {
-		if ( ! isset( $attributes['post_id'] ) ) {
-			return;
-		}
-
-		$attributes = shortcode_atts(
-			[
-				'type'    => 'balloon',
-				'post_id' => '',
-			],
-			$attributes
-		);
-
-		if ( 'official' === $attributes['type'] ) {
-			$file = 'official';
-		} else {
-			$file = 'google-plus';
-		}
-
-		return $this->render(
-			'google-plus/' . $file,
-			[
-				'type'    => $attributes['type'],
-				'post_id' => $attributes['post_id'],
-			]
-		);
 	}
 }

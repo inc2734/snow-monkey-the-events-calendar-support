@@ -5,10 +5,9 @@
  * @license GPL-2.0+
  */
 
-/**
- * Showcase widget
- */
-class Inc2734_WP_Awesome_Widgets_Showcase extends Inc2734_WP_Awesome_Widgets_Abstract_Widget {
+use Inc2734\WP_Awesome_Widgets\App\Contract;
+
+class Inc2734_WP_Awesome_Widgets_Showcase extends Contract\Widget {
 
 	/**
 	 * @var array
@@ -45,6 +44,6 @@ class Inc2734_WP_Awesome_Widgets_Showcase extends Inc2734_WP_Awesome_Widgets_Abs
 add_action(
 	'widgets_init',
 	function() {
-	register_widget( 'Inc2734_WP_Awesome_Widgets_Showcase' );
+		register_widget( 'Inc2734_WP_Awesome_Widgets_Showcase' );
 	}
 );

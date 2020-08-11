@@ -1,6 +1,7 @@
 'use strict';
 
 import forEachHtmlNodes from '@inc2734/for-each-html-nodes';
+import { show, hide } from './_helper';
 
 export default class BasisPageEffect {
   constructor(args = {}) {
@@ -16,12 +17,12 @@ export default class BasisPageEffect {
     }
 
     const fadeInPage = () => {
-      container.setAttribute('aria-hidden', 'true');
+      hide(container);
       container.setAttribute('data-page-effect', 'fadein');
     }
 
     const fadeOutPage = () => {
-      container.setAttribute('aria-hidden', 'false');
+      show(container);
       container.setAttribute('data-page-effect', 'fadeout');
     }
 
@@ -30,6 +31,7 @@ export default class BasisPageEffect {
     }
 
     window.addEventListener('load', () => fadeInPage(), false);
+    window.addEventListener('pageshow', () => fadeInPage(), false);
 
     forEachHtmlNodes(
       pageOutObjects,

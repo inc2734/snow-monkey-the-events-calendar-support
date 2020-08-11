@@ -5,6 +5,8 @@
  * @license GPL-2.0+
  */
 
+use Inc2734\WP_SEO\Helper;
+
 /**
  * og:description updated by wp-seo-meta-description
  *
@@ -14,22 +16,8 @@
 add_filter(
 	'inc2734_wp_ogp_description',
 	function( $description ) {
-		if ( ! is_singular() ) {
-			if ( get_option( 'show_on_front' ) && get_option( 'page_for_posts' ) ) {
-				$meta_description = get_post_meta( get_option( 'page_for_posts' ), 'wp-seo-meta-description', true );
-				if ( $meta_description ) {
-					return $meta_description;
-				}
-			}
-			return $description;
-		}
-
-		$meta_description = get_post_meta( get_the_ID(), 'wp-seo-meta-description', true );
-		if ( $meta_description ) {
-			return $meta_description;
-		}
-
-		return $description;
+		$meta_description = Helper::get_the_description();
+		return $meta_description ? $meta_description : $description;
 	}
 );
 
@@ -41,16 +29,9 @@ add_filter(
 add_filter(
 	'inc2734_wp_ogp_image',
 	function( $og_image ) {
-		if ( ! empty( $og_image ) ) {
-			return $og_image;
-		}
-
-		$default_og_image = apply_filters( 'inc2734_wp_seo_defult_ogp_image_url', null );
-		if ( $default_og_image ) {
-			return $default_og_image;
-		}
-
-		return $og_image;
+		return $og_image
+			? $og_image
+			: apply_filters( 'inc2734_wp_seo_defult_ogp_image_url', null );
 	}
 );
 
@@ -79,5 +60,6 @@ add_action(
 			<meta property="fb:app_id" content="<?php echo esc_attr( $ogp->get_app_id() ); ?>">
 		<?php endif; ?>
 		<?php
-	}
+	},
+	1
 );

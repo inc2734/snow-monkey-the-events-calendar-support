@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey The Events Calendar Support\n"
-"POT-Creation-Date: 2019-10-03 10:57+0900\n"
-"PO-Revision-Date: 2019-10-03 10:59+0900\n"
+"POT-Creation-Date: 2020-08-11 10:37+0900\n"
+"PO-Revision-Date: 2020-08-11 10:37+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
@@ -28,19 +28,19 @@ msgstr ""
 msgid "Events"
 msgstr "イベント"
 
-#: snow-monkey-the-events-calendar-support.php:82
+#: snow-monkey-the-events-calendar-support.php:85
 msgid "[Snow Monkey The Events Calendar Support] Needs the Snow Monkey."
 msgstr "[Snow Monkey The Events Calendar Support] Snow Monkeyが必要です。"
 
-#: snow-monkey-the-events-calendar-support.php:97
+#: snow-monkey-the-events-calendar-support.php:100
 msgid ""
-"[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v7.13.0 or "
+"[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v11.0.0 or "
 "more."
 msgstr ""
-"[Snow Monkey The Events Calendar Support] Snow Monkey v7.13.0以降が必要で"
+"[Snow Monkey The Events Calendar Support] Snow Monkey v11.0.0 以降が必要で"
 "す。"
 
-#: snow-monkey-the-events-calendar-support.php:112
+#: snow-monkey-the-events-calendar-support.php:115
 msgid "[Snow Monkey The Events Calendar Support] Needs The Events Calendar."
 msgstr ""
 "[Snow Monkey The Events Calendar Support] The Events Calendar が必要です。"

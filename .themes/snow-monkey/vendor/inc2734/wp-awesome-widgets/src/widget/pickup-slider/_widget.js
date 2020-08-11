@@ -1,8 +1,5 @@
-'use strict';
-
 import $ from 'jquery';
-import 'slick-carousel';
-import {setItemsHeight} from '../../src/js/helper/slider.js';
+import { setItemsHeight } from '../../src/js/helper/slider.js';
 
 export const wpawPickupSlider = (slider) => {
   let windowWidth = document.documentElement.clientWidth;
@@ -41,7 +38,10 @@ export const wpawPickupSlider = (slider) => {
       fade: true,
       autoplay: true,
       dots: false,
-      infinite: true
+      infinite: true,
+      rows: 0,
+      pauseOnFocus: false,
+      pauseOnHover: false,
     }
   );
 };

@@ -1,24 +1,14 @@
-'use strict';
-
-import $ from 'jquery';
-
 export default class Inc2734_WP_Share_Buttons_Popup {
   constructor(target, title, width, height) {
-    this.target = target;
-    this.title  = title;
-    this.width  = parseInt(width);
-    this.height = parseInt(height);
-    this.setListener();
-  }
-
-  setListener() {
-    this.target.on('click', (event) => {
+    const handleClick = (event) => {
       event.preventDefault();
+
       window.open(
-        this.target.attr('href'),
-        this.title,
-        `width=${this.width}, height=${this.height}, menubar=no, toolbar=no, scrollbars=yes`
+        target.getAttribute('href'),
+        title,
+        `width=${ parseInt(width) }, height=${ parseInt(height) }, menubar=no, toolbar=no, scrollbars=yes`
       );
-    });
+    };
+    target.addEventListener('click', handleClick, false);
   }
 }

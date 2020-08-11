@@ -4,9 +4,10 @@
   "license": "GPL-2.0-or-later",
   "require": {
     "php": ">=5.6",
-    "inc2734/wp-contents-outline": "^3.1",
-    "inc2734/wp-profile-box": "^2.0",
-    "inc2734/wp-adsense": "^0.1"
+    "inc2734/wp-contents-outline": "^5.0",
+    "inc2734/wp-profile-box": "^2.2",
+    "inc2734/wp-adsense": "^1.0",
+    "inc2734/wp-plugin-view-controller": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "*",
@@ -31,7 +32,7 @@
     "test": [
       "vendor/bin/phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/phpcompatibility/phpcompatibility-paragonie,vendor/phpcompatibility/phpcompatibility-wp,vendor/wp-coding-standards/wpcs",
       "vendor/bin/phpcs -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php",
-      "vendor/bin/phpmd ./ text phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
+      "vendor/bin/phpmd ./ text .phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
       "bash bin/phpunit.sh"
     ],
     "phpcbf": "vendor/bin/phpcbf -p -s -v -n . --standard=./.phpcs.xml.dist --extensions=php"

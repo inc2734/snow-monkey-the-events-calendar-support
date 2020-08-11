@@ -3,6 +3,9 @@
  * Plugin name: Snow Monkey The Events Calendar Support
  * Description: With this plugin, Snow Monkey can use The Events Calendar plugin.
  * Version: 0.1.0
+ * Tested up to: 5.5
+ * Requires at least: 5.5
+ * Requires PHP: 5.6
  * Author: inc2734
  * Author URI: https://2inc.org
  * License: GPL2 or later
@@ -39,7 +42,7 @@ class Bootstrap {
 			return;
 		}
 
-		if ( ! version_compare( $theme->get( 'Version' ), '7.13.0', '>=' ) ) {
+		if ( ! version_compare( $theme->get( 'Version' ), '11.0.0', '>=' ) ) {
 			add_action( 'admin_notices', [ $this, '_admin_notice_invalid_snow_monkey_version' ] );
 			return;
 		}
@@ -66,7 +69,10 @@ class Bootstrap {
 		new \Inc2734\WP_GitHub_Plugin_Updater\Bootstrap(
 			plugin_basename( __FILE__ ),
 			'inc2734',
-			'snow-monkey-the-events-calendar-support'
+			'snow-monkey-the-events-calendar-support',
+			[
+				'homepage' => 'https://snow-monkey.2inc.org',
+			]
 		);
 	}
 
@@ -94,7 +100,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v7.13.0 or more.', 'snow-monkey-the-events-calendar-support' ); ?>
+				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v11.0.0 or more.', 'snow-monkey-the-events-calendar-support' ); ?>
 			</p>
 		</div>
 		<?php

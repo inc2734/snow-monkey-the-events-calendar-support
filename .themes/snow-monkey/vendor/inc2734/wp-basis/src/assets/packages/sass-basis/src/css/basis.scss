@@ -1,5 +1,5 @@
 /*!
- * Name: Basis v9.3.2
+ * Name: Basis v11.1.0
  * Description: A lightweight responsive Sass/CSS framework based on flexible box.
  * Author: Takashi Kitajima ( inc2734 )
  * Author URL: https://2inc.org
@@ -9,7 +9,7 @@
 
 @import 'basis-core';
 
-@import 'normalize';
+@import 'normalize.css';
 
 @import 'foundation/base';
 
@@ -20,6 +20,7 @@
 @import 'object/component/checkbox';
 @import 'object/component/container';
 @import 'object/component/drawer';
+@import 'object/component/dropdown';
 @import 'object/component/drawer-close-zone';
 @import 'object/component/entries';
 @import 'object/component/entry';
@@ -48,7 +49,9 @@
 @import 'object/utility/content';
 @import 'object/utility/hidden';
 @import 'object/utility/img';
+@import 'object/utility/noscroll';
 @import 'object/utility/pull';
 @import 'object/utility/text';
 @import 'object/utility/transition';
 @import 'object/utility/visible';
+@import 'object/utility/invisible';

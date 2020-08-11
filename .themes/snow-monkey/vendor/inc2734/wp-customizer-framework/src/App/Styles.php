@@ -15,8 +15,6 @@ use Inc2734\WP_Customizer_Framework\App\Style\Extender;
  * Old style class
  *
  * @deprecated
- *
- * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class Styles {
 
@@ -188,6 +186,9 @@ class Styles {
 	 */
 	protected function _hex_normalization( $hex ) {
 		$hex = preg_replace( '/[^0-9a-f]/i', '', ltrim( $hex, '#' ) );
+		if ( ! $hex ) {
+			return $hex;
+		}
 
 		if ( strlen( $hex ) < 6 ) {
 			$hex = $hex[0] + $hex[0] + $hex[1] + $hex[1] + $hex[2] + $hex[2];
@@ -198,8 +199,6 @@ class Styles {
 
 	/**
 	 * Return hue from hex
-	 *
-	 * @SuppressWarnings(PHPMD.CyclomaticComplexity)
 	 *
 	 * @param hex $hex
 	 * @return hue

@@ -17,7 +17,14 @@
 		</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://feedly.com/i/subscription/feed/' . rawurlencode( get_bloginfo( 'rss2_url' ) ) ); ?>" target="_blank">
-		<span class="wp-share-button__icon wp-share-button__icon--feedly"></span>
+		<span class="wp-share-button__icon wp-share-button__icon--feedly">
+			<?php
+			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/feedly.svg';
+			if ( file_exists( $svg_path ) ) {
+				include( $svg_path );
+			}
+			?>
+		</span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Feedly', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

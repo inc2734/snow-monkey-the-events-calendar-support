@@ -7,17 +7,132 @@
 
 namespace Inc2734\WP_Page_Speed_Optimization\App\Controller;
 
+use Inc2734\WP_Page_Speed_Optimization\App\Model\Defer_Scripts;
+
 class Assets {
 
 	public function __construct() {
-		add_filter( 'script_loader_tag', [ $this, '_set_defer' ], 10, 3 );
-		add_filter( 'script_loader_tag', [ $this, '_set_async' ], 10, 3 );
-		add_filter( 'script_loader_tag', [ $this, '_builded' ], 10, 3 );
-		add_action( 'init', [ $this, '_optimize_jquery_loading' ] );
+		if ( is_admin() || is_customize_preview() ) {
+			return;
+		}
 
-		if ( ! is_admin() ) {
-			add_filter( 'style_loader_tag', [ $this, '_set_preload_stylesheet' ], 10, 3 );
-			add_action( 'wp_footer', [ $this, '_build_stylesheet_link' ], 99999 );
+		// wp_enqueue_scripts hook is called in wp_head:1
+		add_action( 'wp_head', [ $this, '_optimize_jquery_loading' ], 2 );
+
+		// Printing footer scripts in wp_print_footer_scripts:10
+		add_action( 'wp_print_footer_scripts', [ $this, '_optimize_jquery_loading_for_footer' ], 9 );
+
+		add_action( 'wp_head', [ $this, '_optimize_snow_monkey_scripts' ], 2 );
+		add_filter( 'script_loader_tag', [ $this, '_set_defer' ], 11, 3 );
+		add_filter( 'script_loader_tag', [ $this, '_set_async' ], 11, 3 );
+
+		add_filter( 'script_loader_tag', [ $this, '_builded' ], 10, 3 );
+		add_filter( 'style_loader_tag', [ $this, '_set_preload_stylesheet' ], 10, 3 );
+		add_action( 'wp_footer', [ $this, '_build_stylesheet_link' ], 99999 );
+	}
+
+	/**
+	 * Add defer to script
+	 *
+	 * @return void
+	 */
+	public function _optimize_jquery_loading() {
+		if ( ! $this->_is_optimize_jquery_loading() ) {
+			return;
+		}
+
+		if ( in_array( $GLOBALS['pagenow'], [ 'wp-login.php', 'wp-register.php' ] ) ) {
+			return;
+		}
+
+		$jquery = wp_scripts()->query( 'jquery-core', 'registered' );
+		$jquery_ver = $jquery->ver;
+		$jquery_src = $jquery->src;
+
+		wp_deregister_script( 'jquery' );
+		wp_deregister_script( 'jquery-core' );
+		wp_register_script( 'jquery', false, [ 'jquery-core' ], $jquery_ver );
+		wp_register_script( 'jquery-core', $jquery_src, [], $jquery_ver );
+
+		$defer_scripts = new Defer_Scripts();
+		$handles       = $defer_scripts->get();
+
+		foreach ( $handles as $handle ) {
+			if ( wp_scripts()->get_data( $handle, 'after' ) ) {
+				continue;
+			}
+
+			if ( wp_scripts()->get_data( $handle, 'async' ) ) {
+				continue;
+			}
+
+			wp_scripts()->add_data( $handle, 'defer', true );
+
+			// Remove in_footer
+			$dependency = wp_scripts()->query( $handle, 'registered' );
+			if ( $dependency ) {
+				$dependency->args = null;
+				wp_scripts()->add_data( $handle, 'group', null );
+			}
+		}
+	}
+
+	/**
+	 * Add defer to script
+	 *
+	 * @return void
+	 */
+	public function _optimize_jquery_loading_for_footer() {
+		if ( ! $this->_is_optimize_jquery_loading() ) {
+			return;
+		}
+
+		$defer_scripts = new Defer_Scripts();
+		$handles       = $defer_scripts->get();
+
+		foreach ( $handles as $handle ) {
+			if ( wp_scripts()->get_data( $handle, 'after' ) ) {
+				continue;
+			}
+
+			if ( wp_scripts()->get_data( $handle, 'async' ) ) {
+				continue;
+			}
+
+			wp_scripts()->add_data( $handle, 'defer', true );
+		}
+	}
+
+	/**
+	 * defer/async script move to head
+	 *
+	 * @return void
+	 */
+	public function _optimize_snow_monkey_scripts() {
+		$handles = array_merge(
+			$this->_get_defer_handles(),
+			$this->_get_async_handles()
+		);
+
+		if ( ! $handles ) {
+			return;
+		}
+
+		foreach ( $handles as $handle ) {
+			// Remove in_footer
+			$dependency = wp_scripts()->query( $handle, 'registered' );
+			if ( $dependency ) {
+				$dependency->args = null;
+				wp_scripts()->add_data( $handle, 'group', null );
+			}
+		}
+
+		foreach ( $this->_get_defer_handles() as $handle ) {
+			wp_scripts()->add_data( $handle, 'defer', true );
+		}
+
+		foreach ( $this->_get_async_handles() as $handle ) {
+			wp_scripts()->add_data( $handle, 'async', true );
 		}
 	}
 
@@ -30,9 +145,15 @@ class Assets {
 	 * @return string
 	 */
 	public function _set_defer( $tag, $handle, $src ) {
-		$handles = apply_filters( 'inc2734_wp_page_speed_optimization_defer_scripts', [] );
+		if ( false !== strpos( $tag, ' defer' ) || false !== strpos( $tag, ' async' ) ) {
+			return $tag;
+		}
 
-		if ( ! in_array( $handle, $handles ) ) {
+		if ( ! wp_scripts()->get_data( $handle, 'defer' ) ) {
+			return $tag;
+		}
+
+		if ( wp_scripts()->get_data( $handle, 'after' ) ) {
 			return $tag;
 		}
 
@@ -48,9 +169,15 @@ class Assets {
 	 * @return string
 	 */
 	public function _set_async( $tag, $handle, $src ) {
-		$handles = apply_filters( 'inc2734_wp_page_speed_optimization_async_scripts', [] );
+		if ( false !== strpos( $tag, ' defer' ) || false !== strpos( $tag, ' async' ) ) {
+			return $tag;
+		}
 
-		if ( ! in_array( $handle, $handles ) ) {
+		if ( ! wp_scripts()->get_data( $handle, 'async' ) ) {
+			return $tag;
+		}
+
+		if ( wp_scripts()->get_data( $handle, 'after' ) ) {
 			return $tag;
 		}
 
@@ -68,6 +195,9 @@ class Assets {
 	 */
 	public function _builded( $tag, $handle, $src ) {
 		$handles = apply_filters( 'inc2734_wp_page_speed_optimization_builded_scripts', [] );
+		if ( ! $handles ) {
+			return $tag;
+		}
 
 		if ( ! in_array( $handle, $handles ) ) {
 			return $tag;
@@ -105,19 +235,36 @@ class Assets {
 
 			$parse  = parse_url( $src );
 			$buffer = \file_get_contents( $abspath . $parse['path'] );
-			$buffer = str_replace( 'url(../', 'url(' . dirname( $parse['path'] ) . '/../', $buffer );
-			$buffer = str_replace( 'url(//', 'url(/', $buffer );
-			// @codingStandardsIgnoreStart
+			$buffer = preg_replace( '|(url\(\s*?[\'"]?)./|', '$1' . dirname( $parse['path'] ) . '/', $buffer );
+			$buffer = preg_replace( '|(url\(\s*?[\'"]?)../|', '$1' . dirname( $parse['path'] ) . '/../', $buffer );
+			$buffer = preg_replace( '|(url\(\s*?[\'"]?)//|', '$1/', $buffer );
+			$buffer = str_replace( [ "\n\r", "\n", "\r", "\t" ], '', $buffer );
+			$buffer = preg_replace( '|{\s*|', '{', $buffer );
+			$buffer = preg_replace( '|}\s*|', '}', $buffer );
+			$buffer = preg_replace( '|;\s*|', ';', $buffer );
+			$buffer = preg_replace( '|@charset .+?;|', '', $buffer );
+			$buffer = preg_replace( '|/\*.*?\*/|', '', $buffer );
+
+			$media = preg_match( '|media=\'([^\']*?)\'|', $tag, $match )
+				? $match[1]
+				: 'all';
 			?>
-			<style><?php echo $buffer; ?></style>
+			<!-- <?php echo $tag; // xss ok. ?> -->
+			<style media="<?php echo esc_attr( $media ); ?>"><?php echo $buffer; // xss ok. ?></style>
 			<?php
-			// @codingStandardsIgnoreEnd
 			return;
 		}
 
 		$handles = apply_filters( 'inc2734_wp_page_speed_optimization_preload_stylesheets', [] );
 		if ( in_array( $handle, $handles ) ) {
-			return str_replace( '\'stylesheet\'', '\'preload\' as="style"', $tag );
+			?>
+			<!-- <?php echo $tag; // xss ok. ?> -->
+			<?php
+			$preload_for_legacy = str_replace( 'media=\'all\'', 'media="print"', $tag );
+			$preload_for_legacy = str_replace( '/>', 'onload="this.media=\'all\'" />', $preload_for_legacy );
+			$preload_for_modern = str_replace( 'rel=\'stylesheet\'', 'rel="preload"', $tag );
+			$preload_for_modern = str_replace( '/>', 'as="style" />', $preload_for_modern );
+			return $preload_for_legacy . $preload_for_modern;
 		}
 
 		return $tag;
@@ -152,32 +299,29 @@ document.head.appendChild(s);
 	}
 
 	/**
-	 * Optimize jQuery loading
+	 * Return defer script handles
 	 *
-	 * jQuery loads in footer and Invalidate jquery-migrate
-	 *
-	 * @return void
+	 * @return array
 	 */
-	public function _optimize_jquery_loading() {
-		$optimize_loading = apply_filters( 'inc2734_wp_page_speed_optimization_optimize_jquery_loading', false );
-		if ( ! $optimize_loading ) {
-			return;
-		}
+	protected function _is_optimize_jquery_loading() {
+		return apply_filters( 'inc2734_wp_page_speed_optimization_optimize_jquery_loading', false );
+	}
 
-		if ( is_admin() || in_array( $GLOBALS['pagenow'], [ 'wp-login.php', 'wp-register.php' ] ) ) {
-			return;
-		}
+	/**
+	 * Return defer script handles
+	 *
+	 * @return array
+	 */
+	protected function _get_defer_handles() {
+		return apply_filters( 'inc2734_wp_page_speed_optimization_defer_scripts', [] );
+	}
 
-		global $wp_scripts;
-
-		$jquery = $wp_scripts->registered['jquery-core'];
-		$jquery_ver = $jquery->ver;
-		$jquery_src = $jquery->src;
-
-		wp_deregister_script( 'jquery' );
-		wp_deregister_script( 'jquery-core' );
-
-		wp_register_script( 'jquery', false, [ 'jquery-core' ], $jquery_ver, true );
-		wp_register_script( 'jquery-core', $jquery_src, [], $jquery_ver, true );
+	/**
+	 * Return async script handles
+	 *
+	 * @return array
+	 */
+	protected function _get_async_handles() {
+		return apply_filters( 'inc2734_wp_page_speed_optimization_async_scripts', [] );
 	}
 }

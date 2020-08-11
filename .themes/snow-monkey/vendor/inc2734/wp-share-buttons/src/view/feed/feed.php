@@ -12,7 +12,14 @@
 		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php bloginfo( 'rss2_url' ); ?>" target="_blank">
-		<span class="wp-share-button__icon wp-share-button__icon--feed"></span>
+		<span class="wp-share-button__icon wp-share-button__icon--feed">
+			<?php
+			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/feed.svg';
+			if ( file_exists( $svg_path ) ) {
+				include( $svg_path );
+			}
+			?>
+		</span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Feed', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

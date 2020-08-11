@@ -1,7 +1,4 @@
-'use strict';
-
 import $ from 'jquery';
-import 'slick-carousel';
 
 export const wpawCarousel = (carousel) => {
   $(carousel).slick(
@@ -13,6 +10,7 @@ export const wpawCarousel = (carousel) => {
       arrows: false,
       dots: true,
       infinite: true,
+      rows: 0,
       responsive: [
         {
           breakpoint: 768,

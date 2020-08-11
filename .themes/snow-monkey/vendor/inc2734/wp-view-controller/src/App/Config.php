@@ -17,7 +17,7 @@ class Config {
 	 */
 	public static function get( $key = null ) {
 		$path = apply_filters(
-			'inc2734_view_controller_config_path',
+			'inc2734_wp_view_controller_config_path',
 			untrailingslashit( __DIR__ ) . '/../config/config.php'
 		);
 

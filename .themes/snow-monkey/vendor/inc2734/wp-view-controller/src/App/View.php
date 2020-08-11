@@ -7,6 +7,7 @@
 
 namespace Inc2734\WP_View_Controller\App;
 
+use Inc2734\WP_View_Controller\App\Config;
 use Inc2734\WP_View_Controller\Helper;
 
 class View {
@@ -53,10 +54,17 @@ class View {
 		$this->view        = $view;
 		$this->view_suffix = $view_suffix;
 
-		if ( is_singular() ) {
-			$this->_render_loop();
-		} else {
-			$this->_render_direct();
+		$render_type = is_singular() ? 'loop' : 'direct';
+		$render_type = apply_filters( 'inc2734_wp_view_controller_render_type', $render_type );
+		switch ( $render_type ) {
+			case 'loop':
+				$this->_render_loop();
+				break;
+			case 'direct':
+				$this->_render_direct();
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -148,7 +156,7 @@ class View {
 			'name' => '',
 		];
 
-		$slug = Helper::get_located_template_slug( Helper::config( 'view' ), $this->view, $this->view_suffix );
+		$slug = Helper::get_located_template_slug( Config::get( 'view' ), $this->view, $this->view_suffix );
 
 		if ( ! $slug ) {
 			return $view;
@@ -187,15 +195,15 @@ class View {
 		$path        = trim( $path, '/' );
 
 		if ( ! $path ) {
-			return Helper::get_located_template_slug( Helper::config( 'static' ), 'index' );
+			return Helper::get_located_template_slug( Config::get( 'static' ), 'index' );
 		}
 
-		$slug = Helper::get_located_template_slug( Helper::config( 'static' ), $path );
+		$slug = Helper::get_located_template_slug( Config::get( 'static' ), $path );
 		if ( $slug ) {
 			return $slug;
 		}
 
-		$slug = Helper::get_located_template_slug( Helper::config( 'static' ), $path . '/index' );
+		$slug = Helper::get_located_template_slug( Config::get( 'static' ), $path . '/index' );
 		if ( $slug ) {
 			return $slug;
 		}

@@ -26,9 +26,12 @@ class Like_Me_Box {
 	 * @return [string]
 	 */
 	public function _shortcode( $attributes ) {
-		$attributes = shortcode_atts( array(
-			'facebook_page_name' => '',
-		), $attributes );
+		$attributes = shortcode_atts(
+			[
+				'facebook_page_name' => '',
+			],
+			$attributes
+		);
 
 		$this->_render( 'like-me-box', $attributes );
 	}
@@ -81,8 +84,10 @@ class Like_Me_Box {
 	 * @return void
 	 */
 	public function _add_editor_style() {
-		add_editor_style( [
-			'vendor/inc2734/wp-like-me-box/src/assets/css/wp-like-me-box.min.css',
-		] );
+		add_editor_style(
+			[
+				'vendor/inc2734/wp-like-me-box/src/assets/css/wp-like-me-box.min.css',
+			]
+		);
 	}
 }

@@ -102,9 +102,12 @@ add_filter(
  * @param  {int} $seconds
  * @return {int}
  */
-add_filter( 'inc2734_wp_share_buttons_count_cache_seconds', function( $seconds ) {
-  return 300;
-} );
+add_filter(
+	'inc2734_wp_share_buttons_count_cache_seconds',
+	function( $seconds ) {
+		return 300;
+	}
+);
 ```
 
 ### inc2734_wp_share_buttons_apply_https_total_count
@@ -115,9 +118,12 @@ add_filter( 'inc2734_wp_share_buttons_count_cache_seconds', function( $seconds )
  * @param  {bool} $bool
  * @return {bool}
  */
-add_filter( 'inc2734_wp_share_buttons_apply_https_total_count', function( $bool ) {
-  return true;
-} );
+add_filter(
+	'inc2734_wp_share_buttons_apply_https_total_count',
+	function( $bool ) {
+		return true;
+	}
+);
 ```
 
 ### inc2734_wp_share_buttons_localize_script_handle
@@ -128,9 +134,12 @@ add_filter( 'inc2734_wp_share_buttons_apply_https_total_count', function( $bool 
  * @param  {string} $handle
  * @return {string}
  */
-add_filter( 'inc2734_wp_share_buttons_localize_script_handle', function( $handle ) {
-  return $handle;
-} );
+add_filter(
+	'inc2734_wp_share_buttons_localize_script_handle',
+	function( $handle ) {
+		return $handle;
+	}
+);
 ```
 
 ### inc2734_wp_share_buttons_facebook_official_button_share
@@ -141,9 +150,12 @@ add_filter( 'inc2734_wp_share_buttons_localize_script_handle', function( $handle
  * @param  {boolean} $boolean
  * @return {boolean}
  */
-add_filter( 'inc2734_wp_share_buttons_facebook_official_button_share', function( $boolean ) {
-  return $boolean;
-} );
+add_filter(
+	'inc2734_wp_share_buttons_facebook_official_button_share',
+	function( $boolean ) {
+		return $boolean;
+	}
+);
 ```
 
 ### inc2734_wp_share_buttons_shared_title
@@ -155,12 +167,17 @@ add_filter( 'inc2734_wp_share_buttons_facebook_official_button_share', function(
  * @param  {string} $service twitter or copy
  * @return {string}
  */
-add_filter( 'inc2734_wp_share_buttons_shared_title', function( $title, $service ) {
-  if ( 'twitter' === $service ) {
-    return $title . ' #hashtag';
-  }
-  return $title;
-}, 10, 2 );
+add_filter(
+	'inc2734_wp_share_buttons_shared_title',
+	function( $title, $service ) {
+		if ( 'twitter' === $service ) {
+			return $title . ' #hashtag';
+		}
+		return $title;
+	},
+	10,
+	2
+);
 ```
 
 ### inc2734_wp_share_buttons_shared_hashtags
@@ -172,10 +189,49 @@ add_filter( 'inc2734_wp_share_buttons_shared_title', function( $title, $service 
  * @param  {string} $service twitter or copy
  * @return {string}
  */
-add_filter( 'inc2734_wp_share_buttons_shared_hashtags', function( $hashtags, $service ) {
-  if ( 'twitter' === $service ) {
-    return 'hashtagA,hashtagB';
-  }
-  return $title;
-}, 10, 2 );
+add_filter(
+	'inc2734_wp_share_buttons_shared_hashtags',
+	function( $hashtags, $service ) {
+		if ( 'twitter' === $service ) {
+			return 'hashtagA,hashtagB';
+		}
+		return $title;
+	},
+	10,
+	2
+);
+```
+
+### inc2734_wp_share_buttons_count_cache_seconds
+```
+/**
+ * Customize share count caching time
+ *
+ * @param $seconds
+ * @return $seconds
+ */
+add_filter(
+	'inc2734_wp_share_buttons_count_cache_seconds',
+	function( $seconds ) {
+		return $seconds;
+	},
+	10
+);
+```
+
+### inc2734_wp_share_buttons_facebook_app_token
+```
+/**
+ * Set Facebook app token.
+ *
+ * @param string|false
+ * @return string|false
+ */
+add_filter(
+	'inc2734_wp_share_buttons_facebook_app_token',
+	function( $token ) {
+		return $token;
+	},
+	10
+);
 ```

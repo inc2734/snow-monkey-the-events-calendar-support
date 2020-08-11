@@ -17,9 +17,6 @@
 			[wp_share_buttons_hatena type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]
 		</li>
 		<li class="wp-share-buttons__item">
-			[wp_share_buttons_google_plus type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]
-		</li>
-		<li class="wp-share-buttons__item">
 			[wp_share_buttons_feedly type="<?php echo esc_attr( $type ); ?>" post_id="<?php echo esc_attr( $post_id ); ?>"]
 		</li>
 		<li class="wp-share-buttons__item">

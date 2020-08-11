@@ -16,7 +16,14 @@ $query = [
 		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://getpocket.com/edit?' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
-		<span class="wp-share-button__icon wp-share-button__icon--pocket"></span>
+		<span class="wp-share-button__icon wp-share-button__icon--pocket">
+			<?php
+			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/pocket.svg';
+			if ( file_exists( $svg_path ) ) {
+				include( $svg_path );
+			}
+			?>
+		</span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Pocket', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

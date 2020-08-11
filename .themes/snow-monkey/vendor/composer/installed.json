@@ -1,79 +1,17 @@
 [
     {
-        "name": "inc2734/mimizuku-core",
-        "version": "19.4.0",
-        "version_normalized": "19.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/inc2734/mimizuku-core.git",
-            "reference": "edf3a9815643cc580b39e8788ce75279f7119ba4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/mimizuku-core/zipball/edf3a9815643cc580b39e8788ce75279f7119ba4",
-            "reference": "edf3a9815643cc580b39e8788ce75279f7119ba4",
-            "shasum": ""
-        },
-        "require": {
-            "inc2734/wp-adsense": "^0.1",
-            "inc2734/wp-awesome-components": "^1.0",
-            "inc2734/wp-awesome-widgets": "^8.0",
-            "inc2734/wp-basis": "^5.3",
-            "inc2734/wp-breadcrumbs": "^3.0",
-            "inc2734/wp-contents-outline": "^3.2",
-            "inc2734/wp-customizer-framework": "^5.0",
-            "inc2734/wp-github-theme-updater": "^2.0",
-            "inc2734/wp-like-me-box": "^1.0",
-            "inc2734/wp-oembed-blog-card": "^8.0",
-            "inc2734/wp-page-speed-optimization": "^2.0",
-            "inc2734/wp-profile-box": "^2.1",
-            "inc2734/wp-pure-css-gallery": "^2.0",
-            "inc2734/wp-seo": "^3.0",
-            "inc2734/wp-share-buttons": "^4.1",
-            "inc2734/wp-view-controller": "^8.1",
-            "php": ">=5.6"
-        },
-        "require-dev": {
-            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
-            "phpcompatibility/phpcompatibility-wp": "*",
-            "phpmd/phpmd": "2.*",
-            "phpunit/phpunit": "7.*",
-            "squizlabs/php_codesniffer": "*",
-            "wp-coding-standards/wpcs": "*"
-        },
-        "time": "2019-07-19T01:57:34+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Inc2734\\Mimizuku_Core\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0-or-later"
-        ],
-        "authors": [
-            {
-                "name": "Takashi Kitajima",
-                "email": "inc@2inc.org"
-            }
-        ],
-        "description": "This library is core of WordPress theme mimizuku"
-    },
-    {
         "name": "inc2734/wp-adsense",
-        "version": "0.1.0",
-        "version_normalized": "0.1.0.0",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-adsense.git",
-            "reference": "007939c444c3f352288382ff16dd7203919e334d"
+            "reference": "7ead7e5a66b3b03de62477e6502dda2b9c44e32b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-adsense/zipball/007939c444c3f352288382ff16dd7203919e334d",
-            "reference": "007939c444c3f352288382ff16dd7203919e334d",
+            "url": "https://api.github.com/repos/inc2734/wp-adsense/zipball/7ead7e5a66b3b03de62477e6502dda2b9c44e32b",
+            "reference": "7ead7e5a66b3b03de62477e6502dda2b9c44e32b",
             "shasum": ""
         },
         "require": {
@@ -87,7 +25,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-05-07T16:51:16+00:00",
+        "time": "2020-02-04T04:08:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -108,35 +46,31 @@
     },
     {
         "name": "inc2734/wp-awesome-components",
-        "version": "1.0.7",
-        "version_normalized": "1.0.7.0",
+        "version": "1.0.9",
+        "version_normalized": "1.0.9.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-awesome-components.git",
-            "reference": "45ce014943db141350a001d4138921b1c7bec0a2"
+            "reference": "0b49ac530601369576a14bf5fe32a1e48f9a33c3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-awesome-components/zipball/45ce014943db141350a001d4138921b1c7bec0a2",
-            "reference": "45ce014943db141350a001d4138921b1c7bec0a2",
+            "url": "https://api.github.com/repos/inc2734/wp-awesome-components/zipball/0b49ac530601369576a14bf5fe32a1e48f9a33c3",
+            "reference": "0b49ac530601369576a14bf5fe32a1e48f9a33c3",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
         "require-dev": {
-            "doctrine/instantiator": "1.0.4",
-            "myclabs/deep-copy": "1.7.0",
-            "pdepend/pdepend": "2.5.0",
-            "phpdocumentor/reflection-docblock": "3.2.2",
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
             "phpmd/phpmd": "2.*",
-            "phpunit/php-token-stream": "1.4.11",
-            "phpunit/phpunit": "^5.7",
+            "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
-            "symfony/yaml": "3.4.1",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2018-09-10T11:36:14+00:00",
+        "time": "2020-02-04T04:35:04+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -158,23 +92,24 @@
     },
     {
         "name": "inc2734/wp-awesome-widgets",
-        "version": "8.0.2",
-        "version_normalized": "8.0.2.0",
+        "version": "12.0.0",
+        "version_normalized": "12.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-awesome-widgets.git",
-            "reference": "beb2c94b1a04c26d886498c4d27719fe2a198fc7"
+            "reference": "8fdf5da333cbaed9b42bf8d299b584316ef1c671"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-awesome-widgets/zipball/beb2c94b1a04c26d886498c4d27719fe2a198fc7",
-            "reference": "beb2c94b1a04c26d886498c4d27719fe2a198fc7",
+            "url": "https://api.github.com/repos/inc2734/wp-awesome-widgets/zipball/8fdf5da333cbaed9b42bf8d299b584316ef1c671",
+            "reference": "8fdf5da333cbaed9b42bf8d299b584316ef1c671",
             "shasum": ""
         },
         "require": {
-            "inc2734/wp-adsense": "^0.1",
-            "inc2734/wp-contents-outline": "^3.1",
-            "inc2734/wp-profile-box": "^2.0",
+            "inc2734/wp-adsense": "^1.0",
+            "inc2734/wp-contents-outline": "^5.0",
+            "inc2734/wp-plugin-view-controller": "^1.0",
+            "inc2734/wp-profile-box": "^2.2",
             "php": ">=5.6"
         },
         "require-dev": {
@@ -185,7 +120,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-06-27T01:38:12+00:00",
+        "time": "2020-07-31T03:55:11+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -207,17 +142,17 @@
     },
     {
         "name": "inc2734/wp-basis",
-        "version": "5.3.2",
-        "version_normalized": "5.3.2.0",
+        "version": "7.1.0",
+        "version_normalized": "7.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-basis.git",
-            "reference": "31e45400b2e28308d98cc012158349a864656d1c"
+            "reference": "9b2c3d4730863dfa0675f6a3f62136609ded9610"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-basis/zipball/31e45400b2e28308d98cc012158349a864656d1c",
-            "reference": "31e45400b2e28308d98cc012158349a864656d1c",
+            "url": "https://api.github.com/repos/inc2734/wp-basis/zipball/9b2c3d4730863dfa0675f6a3f62136609ded9610",
+            "reference": "9b2c3d4730863dfa0675f6a3f62136609ded9610",
             "shasum": ""
         },
         "require": {
@@ -231,7 +166,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-06-24T04:40:11+00:00",
+        "time": "2020-07-20T23:47:23+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -253,17 +188,17 @@
     },
     {
         "name": "inc2734/wp-breadcrumbs",
-        "version": "3.0.1",
-        "version_normalized": "3.0.1.0",
+        "version": "3.1.3",
+        "version_normalized": "3.1.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-breadcrumbs.git",
-            "reference": "2fa26c8a1900604a65d136767e1e793a7079e962"
+            "reference": "c2dc5c3ab3bb0735df14d04c7bce1aeb08a05749"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/2fa26c8a1900604a65d136767e1e793a7079e962",
-            "reference": "2fa26c8a1900604a65d136767e1e793a7079e962",
+            "url": "https://api.github.com/repos/inc2734/wp-breadcrumbs/zipball/c2dc5c3ab3bb0735df14d04c7bce1aeb08a05749",
+            "reference": "c2dc5c3ab3bb0735df14d04c7bce1aeb08a05749",
             "shasum": ""
         },
         "require": {
@@ -277,7 +212,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-07-08T07:46:41+00:00",
+        "time": "2020-07-27T05:28:11+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -299,20 +234,21 @@
     },
     {
         "name": "inc2734/wp-contents-outline",
-        "version": "3.2.0",
-        "version_normalized": "3.2.0.0",
+        "version": "5.0.2",
+        "version_normalized": "5.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-contents-outline.git",
-            "reference": "5cde2a32f766f852152d04c0944429a77c9cbc36"
+            "reference": "123f18345c09427d8dafcb9f1ce4309f6d4b297c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-contents-outline/zipball/5cde2a32f766f852152d04c0944429a77c9cbc36",
-            "reference": "5cde2a32f766f852152d04c0944429a77c9cbc36",
+            "url": "https://api.github.com/repos/inc2734/wp-contents-outline/zipball/123f18345c09427d8dafcb9f1ce4309f6d4b297c",
+            "reference": "123f18345c09427d8dafcb9f1ce4309f6d4b297c",
             "shasum": ""
         },
         "require": {
+            "inc2734/wp-plugin-view-controller": "^1.0.0",
             "php": ">=5.6"
         },
         "require-dev": {
@@ -323,7 +259,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-05-18T23:43:03+00:00",
+        "time": "2020-07-30T07:10:29+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -344,36 +280,76 @@
         "description": "A library for WordPress. This adds contents outline of the post."
     },
     {
-        "name": "inc2734/wp-customizer-framework",
-        "version": "5.0.0",
-        "version_normalized": "5.0.0.0",
+        "name": "inc2734/wp-custom-css-to-editor",
+        "version": "0.1.1",
+        "version_normalized": "0.1.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/inc2734/wp-customizer-framework.git",
-            "reference": "30bf1ba0a8f252b5f5fbfa942d9e10960b9afee3"
+            "url": "https://github.com/inc2734/wp-custom-css-to-editor.git",
+            "reference": "957086e47fb929dd40599457580426c5a3e06b8b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-customizer-framework/zipball/30bf1ba0a8f252b5f5fbfa942d9e10960b9afee3",
-            "reference": "30bf1ba0a8f252b5f5fbfa942d9e10960b9afee3",
+            "url": "https://api.github.com/repos/inc2734/wp-custom-css-to-editor/zipball/957086e47fb929dd40599457580426c5a3e06b8b",
+            "reference": "957086e47fb929dd40599457580426c5a3e06b8b",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
         "require-dev": {
-            "doctrine/instantiator": "1.0.4",
-            "myclabs/deep-copy": "1.7.0",
-            "pdepend/pdepend": "2.5.0",
-            "phpdocumentor/reflection-docblock": "3.2.2",
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
             "phpmd/phpmd": "2.*",
-            "phpunit/php-token-stream": "1.4.11",
-            "phpunit/phpunit": "^5.7",
+            "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
-            "symfony/yaml": "3.4.1",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-01-21T06:22:27+00:00",
+        "time": "2020-02-04T04:45:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Inc2734\\WP_Custom_CSS_To_Editor\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Takashi Kitajima",
+                "email": "inc@2inc.org"
+            }
+        ]
+    },
+    {
+        "name": "inc2734/wp-customizer-framework",
+        "version": "6.0.3",
+        "version_normalized": "6.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/inc2734/wp-customizer-framework.git",
+            "reference": "59c8b8f45cd0bfb48bebf0a5f595c15178a77574"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/inc2734/wp-customizer-framework/zipball/59c8b8f45cd0bfb48bebf0a5f595c15178a77574",
+            "reference": "59c8b8f45cd0bfb48bebf0a5f595c15178a77574",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
+            "phpunit/phpunit": "7.*",
+            "squizlabs/php_codesniffer": "*",
+            "wp-coding-standards/wpcs": "*"
+        },
+        "time": "2020-06-01T08:33:55+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -395,17 +371,17 @@
     },
     {
         "name": "inc2734/wp-github-theme-updater",
-        "version": "2.0.2",
-        "version_normalized": "2.0.2.0",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-github-theme-updater.git",
-            "reference": "f9727530f2d62b2bf0ca909704d9b9b790d4e9a5"
+            "reference": "3b268f2996ac5b06c041494e1d2b972467e1eca5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-github-theme-updater/zipball/f9727530f2d62b2bf0ca909704d9b9b790d4e9a5",
-            "reference": "f9727530f2d62b2bf0ca909704d9b9b790d4e9a5",
+            "url": "https://api.github.com/repos/inc2734/wp-github-theme-updater/zipball/3b268f2996ac5b06c041494e1d2b972467e1eca5",
+            "reference": "3b268f2996ac5b06c041494e1d2b972467e1eca5",
             "shasum": ""
         },
         "require": {
@@ -414,12 +390,11 @@
         "require-dev": {
             "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
             "phpcompatibility/phpcompatibility-wp": "*",
-            "phpmd/phpmd": "2.*",
             "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-04-11T00:39:25+00:00",
+        "time": "2020-04-24T09:09:00+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -440,36 +415,121 @@
         "description": "A library for WordPress that automatic theme updater with GitHub API."
     },
     {
-        "name": "inc2734/wp-like-me-box",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
+        "name": "inc2734/wp-google-fonts",
+        "version": "0.2.0",
+        "version_normalized": "0.2.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/inc2734/wp-like-me-box.git",
-            "reference": "f0145f5e7c859f84697d4c87b997e557e0b6a038"
+            "url": "https://github.com/inc2734/wp-google-fonts.git",
+            "reference": "77455d4ec1531327f5d64e038f297e0e58e6dfda"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-like-me-box/zipball/f0145f5e7c859f84697d4c87b997e557e0b6a038",
-            "reference": "f0145f5e7c859f84697d4c87b997e557e0b6a038",
+            "url": "https://api.github.com/repos/inc2734/wp-google-fonts/zipball/77455d4ec1531327f5d64e038f297e0e58e6dfda",
+            "reference": "77455d4ec1531327f5d64e038f297e0e58e6dfda",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
         "require-dev": {
-            "doctrine/instantiator": "1.0.4",
-            "myclabs/deep-copy": "1.7.0",
-            "pdepend/pdepend": "2.5.0",
-            "phpdocumentor/reflection-docblock": "3.2.2",
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
             "phpmd/phpmd": "2.*",
-            "phpunit/php-token-stream": "1.4.11",
-            "phpunit/phpunit": "^5.7",
+            "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
-            "symfony/yaml": "3.4.1",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2018-09-06T01:10:35+00:00",
+        "time": "2020-03-03T05:20:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Inc2734\\WP_Google_Fonts\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Takashi Kitajima",
+                "email": "inc@2inc.org"
+            }
+        ]
+    },
+    {
+        "name": "inc2734/wp-helper",
+        "version": "0.2.0",
+        "version_normalized": "0.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/inc2734/wp-helper.git",
+            "reference": "53b0aef4750fb91bb90bea6c61188251d9f8788e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/inc2734/wp-helper/zipball/53b0aef4750fb91bb90bea6c61188251d9f8788e",
+            "reference": "53b0aef4750fb91bb90bea6c61188251d9f8788e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
+            "phpunit/phpunit": "7.*",
+            "squizlabs/php_codesniffer": "*",
+            "wp-coding-standards/wpcs": "*"
+        },
+        "time": "2020-04-07T00:21:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Inc2734\\WP_Helper\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Takashi Kitajima",
+                "email": "inc@2inc.org"
+            }
+        ]
+    },
+    {
+        "name": "inc2734/wp-like-me-box",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/inc2734/wp-like-me-box.git",
+            "reference": "3dd9ae62cc4a8a4ba84111a5b82e6d88de5f9f8a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/inc2734/wp-like-me-box/zipball/3dd9ae62cc4a8a4ba84111a5b82e6d88de5f9f8a",
+            "reference": "3dd9ae62cc4a8a4ba84111a5b82e6d88de5f9f8a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
+            "phpmd/phpmd": "2.*",
+            "phpunit/phpunit": "7.*",
+            "squizlabs/php_codesniffer": "*",
+            "wp-coding-standards/wpcs": "*"
+        },
+        "time": "2020-02-04T05:16:29+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -491,17 +551,17 @@
     },
     {
         "name": "inc2734/wp-oembed-blog-card",
-        "version": "8.0.7",
-        "version_normalized": "8.0.7.0",
+        "version": "8.0.14",
+        "version_normalized": "8.0.14.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-oembed-blog-card.git",
-            "reference": "9bc50d4982180a000b80a3b1a7a6794070e4a3c6"
+            "reference": "9b4a38a84e9bd0c2d567a9c922963c49b63287a3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-oembed-blog-card/zipball/9bc50d4982180a000b80a3b1a7a6794070e4a3c6",
-            "reference": "9bc50d4982180a000b80a3b1a7a6794070e4a3c6",
+            "url": "https://api.github.com/repos/inc2734/wp-oembed-blog-card/zipball/9b4a38a84e9bd0c2d567a9c922963c49b63287a3",
+            "reference": "9b4a38a84e9bd0c2d567a9c922963c49b63287a3",
             "shasum": ""
         },
         "require": {
@@ -510,12 +570,11 @@
         "require-dev": {
             "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
             "phpcompatibility/phpcompatibility-wp": "*",
-            "phpmd/phpmd": "2.*",
             "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-07-08T06:22:01+00:00",
+        "time": "2020-07-22T05:12:43+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -537,35 +596,31 @@
     },
     {
         "name": "inc2734/wp-ogp",
-        "version": "2.0.0",
-        "version_normalized": "2.0.0.0",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-ogp.git",
-            "reference": "f6f6ac80f4a945bb256849ba7b625147a87952b9"
+            "reference": "0c4c3c7413a5ed963cb79d0409b612e4f2b569f1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-ogp/zipball/f6f6ac80f4a945bb256849ba7b625147a87952b9",
-            "reference": "f6f6ac80f4a945bb256849ba7b625147a87952b9",
+            "url": "https://api.github.com/repos/inc2734/wp-ogp/zipball/0c4c3c7413a5ed963cb79d0409b612e4f2b569f1",
+            "reference": "0c4c3c7413a5ed963cb79d0409b612e4f2b569f1",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
         "require-dev": {
-            "doctrine/instantiator": "1.0.4",
-            "myclabs/deep-copy": "1.7.0",
-            "pdepend/pdepend": "2.5.0",
-            "phpdocumentor/reflection-docblock": "3.2.2",
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
             "phpmd/phpmd": "2.*",
-            "phpunit/php-token-stream": "1.4.11",
-            "phpunit/phpunit": "^5.7",
+            "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
-            "symfony/yaml": "3.4.1",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-01-22T00:13:34+00:00",
+        "time": "2020-02-04T05:26:25+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -587,17 +642,17 @@
     },
     {
         "name": "inc2734/wp-page-speed-optimization",
-        "version": "2.0.0",
-        "version_normalized": "2.0.0.0",
+        "version": "3.0.4",
+        "version_normalized": "3.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-page-speed-optimization.git",
-            "reference": "f8ad7bb30942ebd7c3f2f32e79de2545d331e3ce"
+            "reference": "ef86bf47b3fdf97a38201e4339adfa8782991e06"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-page-speed-optimization/zipball/f8ad7bb30942ebd7c3f2f32e79de2545d331e3ce",
-            "reference": "f8ad7bb30942ebd7c3f2f32e79de2545d331e3ce",
+            "url": "https://api.github.com/repos/inc2734/wp-page-speed-optimization/zipball/ef86bf47b3fdf97a38201e4339adfa8782991e06",
+            "reference": "ef86bf47b3fdf97a38201e4339adfa8782991e06",
             "shasum": ""
         },
         "require": {
@@ -606,12 +661,11 @@
         "require-dev": {
             "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
             "phpcompatibility/phpcompatibility-wp": "*",
-            "phpmd/phpmd": "2.*",
             "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-05-24T16:39:44+00:00",
+        "time": "2020-06-30T05:29:33+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -632,18 +686,18 @@
         "description": "A library for WordPress."
     },
     {
-        "name": "inc2734/wp-profile-box",
-        "version": "2.1.0",
-        "version_normalized": "2.1.0.0",
+        "name": "inc2734/wp-plugin-view-controller",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/inc2734/wp-profile-box.git",
-            "reference": "74c83f0046b33f57957132a2a4e7d64ed013701c"
+            "url": "https://github.com/inc2734/wp-plugin-view-controller.git",
+            "reference": "ec4f7150100c11e66927cb87ee776257ded1fb21"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-profile-box/zipball/74c83f0046b33f57957132a2a4e7d64ed013701c",
-            "reference": "74c83f0046b33f57957132a2a4e7d64ed013701c",
+            "url": "https://api.github.com/repos/inc2734/wp-plugin-view-controller/zipball/ec4f7150100c11e66927cb87ee776257ded1fb21",
+            "reference": "ec4f7150100c11e66927cb87ee776257ded1fb21",
             "shasum": ""
         },
         "require": {
@@ -657,7 +711,52 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-07-19T01:50:52+00:00",
+        "time": "2019-10-29T00:03:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Inc2734\\WP_Plugin_View_Controller\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Takashi Kitajima",
+                "email": "inc@2inc.org"
+            }
+        ]
+    },
+    {
+        "name": "inc2734/wp-profile-box",
+        "version": "2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/inc2734/wp-profile-box.git",
+            "reference": "fbc139fd6fc4b614e5ca22a978069cf7853ef99c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/inc2734/wp-profile-box/zipball/fbc139fd6fc4b614e5ca22a978069cf7853ef99c",
+            "reference": "fbc139fd6fc4b614e5ca22a978069cf7853ef99c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
+            "phpmd/phpmd": "2.*",
+            "phpunit/phpunit": "7.*",
+            "squizlabs/php_codesniffer": "*",
+            "wp-coding-standards/wpcs": "*"
+        },
+        "time": "2020-02-04T05:32:34+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -679,35 +778,31 @@
     },
     {
         "name": "inc2734/wp-pure-css-gallery",
-        "version": "2.0.0",
-        "version_normalized": "2.0.0.0",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-pure-css-gallery.git",
-            "reference": "31010deb9224ed57b6f03d35b52ee42133f1aac5"
+            "reference": "3acc025381afe1a9dfb5054c0fef16cda4bcb8b3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-pure-css-gallery/zipball/31010deb9224ed57b6f03d35b52ee42133f1aac5",
-            "reference": "31010deb9224ed57b6f03d35b52ee42133f1aac5",
+            "url": "https://api.github.com/repos/inc2734/wp-pure-css-gallery/zipball/3acc025381afe1a9dfb5054c0fef16cda4bcb8b3",
+            "reference": "3acc025381afe1a9dfb5054c0fef16cda4bcb8b3",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6"
         },
         "require-dev": {
-            "doctrine/instantiator": "1.0.4",
-            "myclabs/deep-copy": "1.7.0",
-            "pdepend/pdepend": "2.5.0",
-            "phpdocumentor/reflection-docblock": "3.2.2",
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+            "phpcompatibility/phpcompatibility-wp": "*",
             "phpmd/phpmd": "2.*",
-            "phpunit/php-token-stream": "1.4.11",
-            "phpunit/phpunit": "^5.7",
+            "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
-            "symfony/yaml": "3.4.1",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2018-09-05T01:23:21+00:00",
+        "time": "2020-07-17T06:40:23+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -729,17 +824,17 @@
     },
     {
         "name": "inc2734/wp-seo",
-        "version": "3.0.0",
-        "version_normalized": "3.0.0.0",
+        "version": "4.1.2",
+        "version_normalized": "4.1.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-seo.git",
-            "reference": "02fa25d7f31c7fd5e2cdc181231ac27418990186"
+            "reference": "bfcca0e7448d10f32823c87a5a68b27b34f8dafc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-seo/zipball/02fa25d7f31c7fd5e2cdc181231ac27418990186",
-            "reference": "02fa25d7f31c7fd5e2cdc181231ac27418990186",
+            "url": "https://api.github.com/repos/inc2734/wp-seo/zipball/bfcca0e7448d10f32823c87a5a68b27b34f8dafc",
+            "reference": "bfcca0e7448d10f32823c87a5a68b27b34f8dafc",
             "shasum": ""
         },
         "require": {
@@ -754,7 +849,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-05-30T01:20:05+00:00",
+        "time": "2020-05-06T23:16:51+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -776,17 +871,17 @@
     },
     {
         "name": "inc2734/wp-share-buttons",
-        "version": "4.1.4",
-        "version_normalized": "4.1.4.0",
+        "version": "6.0.0",
+        "version_normalized": "6.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-share-buttons.git",
-            "reference": "cac8130b7f9c81dde7f55c475112e8680ba7792b"
+            "reference": "731544dd2de2f2423e8265562ef92e5a44e635c3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-share-buttons/zipball/cac8130b7f9c81dde7f55c475112e8680ba7792b",
-            "reference": "cac8130b7f9c81dde7f55c475112e8680ba7792b",
+            "url": "https://api.github.com/repos/inc2734/wp-share-buttons/zipball/731544dd2de2f2423e8265562ef92e5a44e635c3",
+            "reference": "731544dd2de2f2423e8265562ef92e5a44e635c3",
             "shasum": ""
         },
         "require": {
@@ -801,7 +896,7 @@
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-05-17T07:07:37+00:00",
+        "time": "2020-07-18T13:17:50+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -824,17 +919,17 @@
     },
     {
         "name": "inc2734/wp-view-controller",
-        "version": "8.1.0",
-        "version_normalized": "8.1.0.0",
+        "version": "12.0.2",
+        "version_normalized": "12.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/inc2734/wp-view-controller.git",
-            "reference": "e5c77f5290912d4d64da05d0ea48ff4c9b89947b"
+            "reference": "fe3706158c23de70526a23f90ea0998de1a8aa52"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/inc2734/wp-view-controller/zipball/e5c77f5290912d4d64da05d0ea48ff4c9b89947b",
-            "reference": "e5c77f5290912d4d64da05d0ea48ff4c9b89947b",
+            "url": "https://api.github.com/repos/inc2734/wp-view-controller/zipball/fe3706158c23de70526a23f90ea0998de1a8aa52",
+            "reference": "fe3706158c23de70526a23f90ea0998de1a8aa52",
             "shasum": ""
         },
         "require": {
@@ -843,12 +938,11 @@
         "require-dev": {
             "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
             "phpcompatibility/phpcompatibility-wp": "*",
-            "phpmd/phpmd": "2.*",
             "phpunit/phpunit": "7.*",
             "squizlabs/php_codesniffer": "*",
             "wp-coding-standards/wpcs": "*"
         },
-        "time": "2019-07-18T03:10:57+00:00",
+        "time": "2020-08-03T06:03:36+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

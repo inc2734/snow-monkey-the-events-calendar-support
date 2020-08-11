@@ -10,25 +10,45 @@ Drawer component
 ### html
 ```html
 <div style="min-height: 200px; position: relative">
-  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-hamburger-btn">
-    <ul class="c-drawer__menu">
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item"><a href="#">menu</a></li>
-      <li class="c-drawer__item">
-        <a href="#">menu</a>
-        <div class="c-drawer__toggle" aria-expanded="false">
-          <span class="c-ic-angle-right" aria-hidden="true"></span>
-        </div>
-        <ul class="c-drawer__submenu" aria-hidden="true">
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-          <li class="c-drawer__subitem"><a href="#">submenu</a></li>
-        </ul>
-      </li>
-    </ul>
+  <nav id="my-drawer" class="c-drawer" role="navigation" aria-hidden="true" aria-labelledby="my-drawer-btn">
+    <div class="c-drawer__inner">
+      <ul class="c-drawer__menu">
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item"><a href="#">menu</a></li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem">
+              <a href="#">submenu</a>
+              <div class="c-drawer__toggle" aria-expanded="false">
+                <span class="c-ic-angle-right" aria-hidden="true"></span>
+              </div>
+              <ul class="c-drawer__submenu" aria-hidden="true">
+                <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="c-drawer__item">
+          <a href="#">menu</a>
+          <div class="c-drawer__toggle" aria-expanded="false">
+            <span class="c-ic-angle-right" aria-hidden="true"></span>
+          </div>
+          <ul class="c-drawer__submenu" aria-hidden="true">
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+            <li class="c-drawer__subitem"><a href="#">submenu</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 
-<div id="my-hamburger-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
+<div id="my-drawer-btn" class="c-hamburger-btn" aria-expanded="false" aria-controls="my-drawer">
   <div class="c-hamburger-btn__bars">
     <div class="c-hamburger-btn__bar"></div>
     <div class="c-hamburger-btn__bar"></div>
@@ -43,6 +63,13 @@ Drawer component
   $item-padding-coefficient: 1;
 
   @include _drawer();
+  @include _transition(left, visibility);
+  transition-timing-function: ease-in;
+
+  &[aria-hidden="false"] {
+    @include _transition(left);
+    transition-timing-function: ease-out;
+  }
 
   &__menu {
     @include _list-unstyled();
@@ -67,11 +94,18 @@ Drawer component
   }
 
   &__toggle {
-    @include _position(absolute, _space(.5), 5px, 0);
+    position: absolute;
+    @include _top(.5);
+    @include _right(5px);
+    @include _bottom(0);
     @include _square($_base-line-height);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    > .c-ic-angle-right {
+      transform: translateY(0);
+    }
   }
 
   &--fixed {

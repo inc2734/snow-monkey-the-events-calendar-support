@@ -21,7 +21,14 @@ $query = [
 		</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php echo esc_url( 'https://www.facebook.com/sharer/sharer.php?' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
-		<span class="wp-share-button__icon wp-share-button__icon--facebook"></span>
+		<span class="wp-share-button__icon wp-share-button__icon--facebook">
+			<?php
+			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/facebook.svg';
+			if ( file_exists( $svg_path ) ) {
+				include( $svg_path );
+			}
+			?>
+		</span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Share', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

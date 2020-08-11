@@ -36,27 +36,19 @@ class Bootstrap {
 	 * @return void
 	 */
 	public function _wp_enqueue_scripts() {
-		$relative_path = '/vendor/inc2734/wp-contents-outline/src/assets/packages/jquery.contents-outline/dist/jquery.contents-outline.min.js';
-		$src  = get_template_directory_uri() . $relative_path;
-		$path = get_template_directory() . $relative_path;
-
 		wp_enqueue_script(
-			'jquery.contents-outline',
-			$src,
-			[ 'jquery' ],
-			filemtime( $path ),
+			'contents-outline',
+			get_template_directory_uri() . '/vendor/inc2734/wp-contents-outline/src/assets/packages/@inc2734/contents-outline/dist/index.js',
+			[],
+			filemtime( get_template_directory() . '/vendor/inc2734/wp-contents-outline/src/assets/packages/@inc2734/contents-outline/dist/index.js' ),
 			true
 		);
 
-		$relative_path = '/vendor/inc2734/wp-contents-outline/src/assets/js/app.min.js';
-		$src  = get_template_directory_uri() . $relative_path;
-		$path = get_template_directory() . $relative_path;
-
 		wp_enqueue_script(
 			'wp-contents-outline',
-			$src,
-			[ 'jquery.contents-outline' ],
-			filemtime( $path ),
+			get_template_directory_uri() . '/vendor/inc2734/wp-contents-outline/src/assets/js/app.js',
+			[ 'contents-outline' ],
+			filemtime( get_template_directory() . '/vendor/inc2734/wp-contents-outline/src/assets/js/app.js' ),
 			true
 		);
 	}

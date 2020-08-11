@@ -2,24 +2,16 @@
  * Share button icons
  *
  * @var map $icons
- *            name: (color, content, show count)
+ *            name: (color, show count)
  */
 $icons: (
-  twitter    : (#00acf2, "\e900", true),
-  facebook   : (#4555ab, "\e901", true),
-  hatena     : (#008be2, "\e902", true),
-  google-plus: (#d9453d, "\e907", false),
-  feedly     : (#6cc655, "\e905", true),
-  pocket     : (#ff002d, "\e904", false),
-  pinterest  : (#bb0f23, "\e908", false),
-  line       : (#00b900, "\e903", false),
-  feed       : (#ff9900, "\e906", false),
-  copy       : (#333333, "\e909", false)
+  twitter  : (#1da1f1, true),
+  facebook : (#1877f2, true),
+  hatena   : (#008be2, true),
+  feedly   : (#6cc655, true),
+  pocket   : (#ff002d, false),
+  pinterest: (#bb0f23, false),
+  line     : (#00b900, false),
+  feed     : (#ff9900, false),
+  copy     : (#333333, false)
 );
-
-/**
- * Font path
- *
- * @var string
- */
-$wp-share-buttons-font-path: '..' !default;

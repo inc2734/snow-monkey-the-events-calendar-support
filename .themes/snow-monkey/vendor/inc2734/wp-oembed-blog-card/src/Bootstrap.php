@@ -37,8 +37,6 @@ class Bootstrap {
 	/**
 	 * Add REST API for get blog card content from ajax
 	 *
-	 * @SuppressWarnings(PHPMD.ExitExpression)
-	 *
 	 * @param string $cache
 	 * @param string $url
 	 * @return string
@@ -60,6 +58,7 @@ class Bootstrap {
 					echo wp_kses_post( View::get_template( $url ) );
 					die();
 				},
+				'permission_callback' => '__return_true',
 			]
 		);
 	}
@@ -142,14 +141,21 @@ class Bootstrap {
 	 * @return string
 	 */
 	protected function _render( $url ) {
-		$this->_maybe_refresh_cache( $url );
-
 		if ( ! is_admin() ) {
-			return $this->_is_block_embed_rendering_request()
-				? View::get_block_template( $url )
-				: View::get_pre_blog_card_template( $url );
+			if ( $this->_is_block_embed_rendering_request() ) {
+				$this->_maybe_refresh_cache( $url );
+				return View::get_block_template( $url );
+			}
+
+			if ( ! Cache::get( $url ) ) {
+				Cache::refresh( $url );
+				return View::get_pre_blog_card_template( $url );
+			}
+
+			return View::get_template( $url );
 		}
 
+		$this->_maybe_refresh_cache( $url );
 		return View::get_template( $url );
 	}
 

@@ -15,3 +15,21 @@ use Inc2734\WP_Adsense;
 
 WP_Adsense\Helper::the_adsense_code( $code, $size );
 ```
+
+## Filter hooks
+
+### inc2734_wp_adsense_the_adsense_code
+```
+/**
+ * Customize the adsense code
+ *
+ * @param string $code
+ * @return string
+ */
+add_filter(
+	'inc2734_wp_adsense_the_adsense_code',
+	function( $code ) {
+		return $code;
+	}
+);
+```

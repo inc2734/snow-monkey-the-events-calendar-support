@@ -7,6 +7,8 @@
 
 namespace Inc2734\WP_OEmbed_Blog_Card\App\Model;
 
+use WP_Error;
+
 class Requester {
 
 	/**
@@ -29,6 +31,9 @@ class Requester {
 	 * @var array
 	 */
 	protected $response = [];
+
+	protected $interval_increment = 100;
+	protected static $interval = 0;
 
 	/**
 	 * @param string $url
@@ -55,11 +60,24 @@ class Requester {
 	 */
 	public function request() {
 		if ( 0 === strpos( $this->url, 'http://127.0.0.1:' ) || 0 === strpos( $this->url, 'http://localhost:' ) ) {
-			return new \WP_Error(
+			return new WP_Error(
 				'http_request_failed',
 				__( 'Requests for local URLs are not supported.', 'inc2734-wp-oembed-blog-card' )
 			);
 		}
+
+		$cache_key   = md5( json_encode( $this->url ) );
+		$cache_group = 'inc2734/wp-oembed-blog-card/request';
+		$cache       = wp_cache_get( $cache_key, $cache_group );
+		if ( false !== $cache ) {
+			$this->response = $cache;
+			return $cache;
+		}
+
+		if ( 0 < static::$interval ) {
+			sleep( static::$interval / 1000 );
+		}
+		static::$interval += $this->interval_increment;
 
 		$this->response = wp_remote_get(
 			$this->url,
@@ -69,6 +87,7 @@ class Requester {
 			]
 		);
 
+		wp_cache_set( $cache_key, $this->response, $cache_group );
 		return $this->response;
 	}
 
@@ -102,7 +121,17 @@ class Requester {
 			return;
 		}
 
-		return $headers->offsetGet( 'content-type' );
+		$content_type = $headers->offsetGet( 'content-type' );
+		if ( $content_type ) {
+			return $content_type;
+		}
+
+		$content = $this->get_content();
+		if ( false !== strpos( $content, '<html ' ) ) {
+			return 'text/html';
+		}
+
+		return false;
 	}
 
 	/**

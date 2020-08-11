@@ -12,7 +12,14 @@
 		<div class="wp-share-button__count">-</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-custom="true">
-		<span class="wp-share-button__icon wp-share-button__icon--pinterest"></span>
+		<span class="wp-share-button__icon wp-share-button__icon--pinterest">
+			<?php
+			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/pinterest.svg';
+			if ( file_exists( $svg_path ) ) {
+				include( $svg_path );
+			}
+			?>
+		</span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Pinterest', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

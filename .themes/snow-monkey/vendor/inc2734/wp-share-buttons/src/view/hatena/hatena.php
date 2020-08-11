@@ -21,7 +21,14 @@ $query = [
 		</div>
 	<?php endif; ?>
 	<a class="wp-share-button__button" href="<?php echo esc_url( 'http://b.hatena.ne.jp/add?mode=confirm&amp;' . http_build_query( $query, '', '&amp;' ) ); ?>" target="_blank">
-		<span class="wp-share-button__icon wp-share-button__icon--hatena"></span>
+		<span class="wp-share-button__icon wp-share-button__icon--hatena">
+			<?php
+			$svg_path = get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/img/hatena.svg';
+			if ( file_exists( $svg_path ) ) {
+				include( $svg_path );
+			}
+			?>
+		</span>
 		<span class="wp-share-button__label"><?php esc_html_e( 'Bookmark', 'inc2734-wp-share-buttons' ); ?></span>
 	</a>
 </div>

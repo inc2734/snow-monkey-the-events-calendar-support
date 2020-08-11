@@ -7,6 +7,9 @@
 
 namespace Inc2734\WP_GitHub_Theme_Updater;
 
+use WP_Error;
+use Inc2734\WP_GitHub_Theme_Updater\App\Model\Fields;
+
 class Bootstrap {
 
 	/**
@@ -33,9 +36,9 @@ class Bootstrap {
 	/**
 	 * Theme data fields
 	 *
-	 * @var array
+	 * @var Fields
 	 */
-	protected $fields = [];
+	protected $fields;
 
 	/**
 	 * @param string $theme_name
@@ -47,7 +50,7 @@ class Bootstrap {
 		$this->theme_name = $theme_name;
 		$this->user_name  = $user_name;
 		$this->repository = $repository;
-		$this->fields     = $fields;
+		$this->fields     = new Fields( $fields );
 
 		$upgrader = new App\Model\Upgrader( $theme_name );
 
@@ -86,12 +89,26 @@ class Bootstrap {
 			return $transient;
 		}
 
-		$transient->response[ $this->theme_name ] = [
-			'theme'       => $this->theme_name,
-			'new_version' => $api_data->tag_name,
-			'url'         => ( ! empty( $this->fields['homepage'] ) ) ? $this->fields['homepage'] : '',
-			'package'     => $package,
+		$transient_response = [
+			'theme'        => $this->theme_name,
+			'new_version'  => $api_data->tag_name,
+			'url'          => $this->fields->get( 'homepage' ),
+			'package'      => $package,
+			'update'       => [
+				'requires'     => $this->fields->get( 'requires' ) ? $this->fields->get( 'require' ) : $current->get( 'RequiresWP' ),
+				'requires_php' => $this->fields->get( 'requires_php' ) ? $this->fields->get( 'requires_php' ) : $current->get( 'RequiresPHP' ),
+			],
 		];
+
+		$transient_response = apply_filters(
+			sprintf(
+				'inc2734_github_theme_updater_transient_response_%1$s/%2$s',
+				$this->user_name,
+				$this->repository
+			),
+			$transient_response
+		);
+		$transient->response[ $this->theme_name ] = (array) $transient_response;
 
 		return $transient;
 	}
@@ -118,14 +135,13 @@ class Bootstrap {
 	 * @return void
 	 */
 	protected function _set_notice_error_about_github_api() {
-		$api_data = $this->_get_transient_api_data();
-		if ( ! is_wp_error( $api_data ) ) {
-			return;
-		}
-
 		add_action(
 			'admin_notices',
-			function() use ( $api_data ) {
+			function() {
+				$api_data = $this->_get_transient_api_data();
+				if ( ! is_wp_error( $api_data ) ) {
+					return;
+				}
 				?>
 				<div class="notice notice-error">
 					<p>
@@ -208,15 +224,22 @@ class Bootstrap {
 		}
 
 		$response_code = wp_remote_retrieve_response_code( $response );
-		$body = json_decode( wp_remote_retrieve_body( $response ) );
+		if ( '' === $response_code ) {
+			return null;
+		}
 
+		$body = json_decode( wp_remote_retrieve_body( $response ) );
 		if ( 200 == $response_code ) {
 			return $body;
 		}
 
-		return new \WP_Error(
+		$message = null !== $body && property_exists( $body, 'message' )
+			? $body->message
+			: __( 'No response.', 'inc2734-wp-github-theme-updater' );
+
+		return new WP_Error(
 			$response_code,
-			'Inc2734_WP_GitHub_Theme_Updater error. ' . $body->message
+			'Inc2734_WP_GitHub_Theme_Updater error. ' . $message
 		);
 	}
 

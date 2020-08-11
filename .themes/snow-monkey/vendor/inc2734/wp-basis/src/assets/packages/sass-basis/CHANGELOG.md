@@ -1,5 +1,105 @@
 #Changelog
 
+## July 20, 2020 11.1.0
+* Add `_invisible()`.
+* Add `u-invisible`, `u-invisible-xxx`, `u-invisible-xxx-up` and `u-invisible-xxx-down`.
+
+## June 29, 2020 11.0.3
+* Remove node-normalize-scss and install normalize.css
+
+## June 26, 2020 11.0.2
+* Remove `speak` from `.u-hidden-xxx` and `.u-visible-xxx`.
+* Add `visibility: hidden` to `.u-hidden-xxx`.
+* Add `visibility: visible` to `.u-visible-xxx`.
+
+## June 3, 2020 11.0.1
+* Fixed design collapse of `.c-select--block`.
+
+## May 21, 2020 11.0.0
+* Fixed a bug that `_drawer` and `.c-drawer` does not scroll correctly on iOS Safari.
+* Fixed a bug that `_dropdown` and `.c-dropdown` does not scroll correctly on iOS Safari.
+* Remove Basis font. The following components are affected: `.c-ic-*`, `.c-breadcrumbs`, `.c-drawer`, `.c-dropdown` and `.c-navbar[data-popup-mode="click"]`.
+
+## April 3, 2020 10.1.1
+* Hover effect apply only lg size.
+
+## March 25, 2020 10.1.0
+* Add CSS custom property: `--_container-margin-sm`
+* Add function: `_var-container-margin-sm()`
+
+## March 24, 2020 10.0.1
+* Add function: `_var-background-color()`
+
+## March 23, 2020 10.0.0
+* Add CSS custom property: `--_container-margin`
+* Add CSS custom property: `--_container-max-width`
+* Add CSS custom property: `--_border-radius`
+* Add CSS custom property: `--_color-text`
+* Add CSS custom property: `--_background-color`
+* Add CSS custom property: `--_space`
+* Add CSS custom property: `--_margin-scale`
+* Add function: `_var-container-margin()`
+* Add function: `_var-container-max-width()`
+* Add function: `_var-border-radius()`
+* Add function: `_var-color-text()`
+* Add function: `_var-space()`
+* Add function: `_var-margin-scale()`
+* Add mixin `_between-content()`
+* Redesigned form controls. See more https://github.com/sass-basis/basis/issues/122
+
+## March 4, 2020 9.6.1
+* Update expand direction the submenu of c-navbar
+
+## February 5, 2020 v9.6.0
+* Add `_lattice()` abstract.
+* Review the balance of vertical-rhythm when the font size is small.
+
+## February 4, 2020 v9.5.10
+* Review the balance of vertical-rhythm when the font size is small.
+* Fixed a bug that `hidden-xx` and `visible-xx` were not linked with `$_sizes`.
+
+## December 28, 2019 v9.5.9
+* Fixed a drawer not closing when clicking a link in the drawer.
+
+## December 28, 2019 v9.5.8
+* Fix IE11 JS error.
+
+## December 28, 2019 v9.5.7
+* Update npm packages.
+
+## December 13, 2019 v9.5.6
+* Fix navbar js error.
+
+## November 3, 2019 v9.5.5
+* Fix `.c-navbar--center` bug.
+* Fix `.u-hidden` bug.
+
+## September 13, 2019 v9.5.4
+* Refactoring drawer script.
+* Refactoring navbar script.
+
+## August 29, 2019 v9.5.3
+* Some fixes for drawer.
+
+## August 17, 2019 v9.5.2
+* Fix a bug that c-page-effect does not disappear when page back on iOS Safari.
+
+## August 10, 2019 v9.5.1
+* Prevent body scrolling when open the `.c-drawer--fixed` and `.c-dropdown--fixed`.
+* Fix bug that focus not move when drawer opening.
+
+## August 9, 2019 v9.5.0
+* Add `_dropdown()`;
+* Add `.c-dropdown`;
+* Add `.u-noscroll`;
+* Prevent body scroll when `.c-drawer--fixed` and `.c-dropdown--fixed` just below the body is opened.
+
+## July 30, 2019 v9.4.0
+* Support multi property at `_transition()`.
+* Change default transition duration .1s to .2s.
+* Fix bug that animation not apply when closing drawer.
++ Drawer animation abstract to component.
+
 ## June 24, 2019 v9.3.2
 * Fixed the bug that input group button might be hidden.
 

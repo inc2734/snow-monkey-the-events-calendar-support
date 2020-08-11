@@ -18,8 +18,19 @@
 @import 'core/variable/transition';
 @import 'core/variable/border-radius';
 @import 'core/variable/color';
-@import 'core/variable/font';
 @import 'core/variable/media-query';
+@import 'core/variable/container';
+@import 'core/variable/form';
+@import 'core/variable/page-effect';
+
+@import 'core/var/background-color';
+@import 'core/var/border-radius';
+@import 'core/var/color-text';
+@import 'core/var/container-margin';
+@import 'core/var/container-margin-sm';
+@import 'core/var/container-max-width';
+@import 'core/var/margin-scale';
+@import 'core/var/space';
 
 @import 'core/mixin/animation';
 @import 'core/mixin/background-image';
@@ -49,12 +60,12 @@
 @import 'core/abstract/container';
 @import 'core/abstract/drawer';
 @import 'core/abstract/drawer-close-zone';
+@import 'core/abstract/dropdown';
 @import 'core/abstract/entries';
 @import 'core/abstract/entry';
 @import 'core/abstract/form-control';
 @import 'core/abstract/hamburger-btn';
 @import 'core/abstract/hero';
-@import 'core/abstract/ic';
 @import 'core/abstract/ib-row';
 @import 'core/abstract/input-group';
 @import 'core/abstract/media';
@@ -68,6 +79,7 @@
 @import 'core/abstract/responsive-container';
 @import 'core/abstract/responsive-table';
 @import 'core/abstract/row';
+@import 'core/abstract/lattice';
 @import 'core/abstract/section';
 @import 'core/abstract/select';
 @import 'core/abstract/site-branding';

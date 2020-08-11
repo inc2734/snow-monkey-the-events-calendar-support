@@ -37,6 +37,7 @@ document.addEventListener(
   },
   false
 );
+```
 
 ## Walker_Nav_Menu for navbar
 ```
@@ -61,9 +62,12 @@ wp_nav_menu( [
  * @param boolean $use true
  * @return boolean
  */
-add_filter( 'inc2734_wp_basis_use_responsive_iframe', function( $use ) {
-  return false;
-} );
+add_filter(
+  'inc2734_wp_basis_use_responsive_iframe',
+  function( $use ) {
+    return false;
+  }
+);
 ```
 
 ### inc2734_wp_basis_4to3_oembed_domains
@@ -77,7 +81,55 @@ add_filter( 'inc2734_wp_basis_use_responsive_iframe', function( $use ) {
  *    @var string https?:\/\/speakerdeck\.com
  * @return array
  */
-add_filter( 'inc2734_wp_basis_4to3_oembed_domains', function( $domains ) {
-  return $domains;
-} );
+add_filter(
+  'inc2734_wp_basis_4to3_oembed_domains',
+  function( $domains ) {
+    return $domains;
+  }
+);
+```
+
+### inc2734_wp_basis_wp_link_pages_args
+```
+/**
+ * @see https://developer.wordpress.org/reference/functions/wp_link_pages/
+ * @param array $args
+ * @return array
+ */
+add_filter(
+  'inc2734_wp_basis_wp_link_pages_args',
+  function( $args ) {
+    return $args;
+  }
+);
+```
+
+### inc2734_wp_basis_posts_pagination_args
+```
+/**
+ * @see https://developer.wordpress.org/reference/functions/get_the_posts_pagination/
+ * @param array $args
+ * @return array
+ */
+add_filter(
+  'inc2734_wp_basis_posts_pagination_args',
+  function( $args ) {
+    return $args;
+  }
+);
+```
+
+### inc2734_wp_basis_comments_pagination_args
+```
+/**
+ * @see https://developer.wordpress.org/reference/functions/get_the_comments_pagination/
+ * @param array $args
+ * @return array
+ */
+add_filter(
+  'inc2734_wp_basis_comments_pagination_args',
+  function( $args ) {
+    return $args;
+  }
+);
 ```

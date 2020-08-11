@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
+class ComposerStaticInit3180b2eee29abb28461d232e67e2e445
 {
     public static $prefixLengthsPsr4 = array (
         'I' => 
@@ -14,19 +14,22 @@ class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
             'Inc2734\\WP_SEO\\' => 15,
             'Inc2734\\WP_Pure_CSS_Gallery\\' => 28,
             'Inc2734\\WP_Profile_Box\\' => 23,
+            'Inc2734\\WP_Plugin_View_Controller\\' => 34,
             'Inc2734\\WP_Page_Speed_Optimization\\' => 35,
             'Inc2734\\WP_OGP\\' => 15,
             'Inc2734\\WP_OEmbed_Blog_Card\\' => 28,
             'Inc2734\\WP_Like_Me_Box\\' => 23,
+            'Inc2734\\WP_Helper\\' => 18,
+            'Inc2734\\WP_Google_Fonts\\' => 24,
             'Inc2734\\WP_GitHub_Theme_Updater\\' => 32,
             'Inc2734\\WP_Customizer_Framework\\' => 32,
+            'Inc2734\\WP_Custom_CSS_To_Editor\\' => 32,
             'Inc2734\\WP_Contents_Outline\\' => 28,
             'Inc2734\\WP_Breadcrumbs\\' => 23,
             'Inc2734\\WP_Basis\\' => 17,
             'Inc2734\\WP_Awesome_Widgets\\' => 27,
             'Inc2734\\WP_Awesome_Components\\' => 30,
             'Inc2734\\WP_Adsense\\' => 19,
-            'Inc2734\\Mimizuku_Core\\' => 22,
         ),
         'F' => 
         array (
@@ -55,6 +58,10 @@ class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-profile-box/src',
         ),
+        'Inc2734\\WP_Plugin_View_Controller\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inc2734/wp-plugin-view-controller/src',
+        ),
         'Inc2734\\WP_Page_Speed_Optimization\\' => 
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-page-speed-optimization/src',
@@ -71,6 +78,14 @@ class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-like-me-box/src',
         ),
+        'Inc2734\\WP_Helper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inc2734/wp-helper/src',
+        ),
+        'Inc2734\\WP_Google_Fonts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inc2734/wp-google-fonts/src',
+        ),
         'Inc2734\\WP_GitHub_Theme_Updater\\' => 
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-github-theme-updater/src',
@@ -78,6 +93,10 @@ class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
         'Inc2734\\WP_Customizer_Framework\\' => 
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-customizer-framework/src',
+        ),
+        'Inc2734\\WP_Custom_CSS_To_Editor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inc2734/wp-custom-css-to-editor/src',
         ),
         'Inc2734\\WP_Contents_Outline\\' => 
         array (
@@ -103,10 +122,6 @@ class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
         array (
             0 => __DIR__ . '/..' . '/inc2734/wp-adsense/src',
         ),
-        'Inc2734\\Mimizuku_Core\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/inc2734/mimizuku-core/src',
-        ),
         'Framework\\' => 
         array (
             0 => __DIR__ . '/../../..' . '/Framework',
@@ -116,8 +131,8 @@ class ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitff4307b3b410d51cc5deca9e8f252e67::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3180b2eee29abb28461d232e67e2e445::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3180b2eee29abb28461d232e67e2e445::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

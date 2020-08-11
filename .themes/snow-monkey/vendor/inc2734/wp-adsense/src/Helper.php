@@ -41,7 +41,7 @@ class Helper {
 
 		// @todo
 		// @codingStandardsIgnoreStart
-		echo $code;
+		echo apply_filters( 'inc2734_wp_adsense_the_adsense_code', $code );
 		// @codingStandardsIgnoreEnd
 	}
 }

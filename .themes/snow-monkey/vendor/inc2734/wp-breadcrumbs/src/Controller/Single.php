@@ -20,30 +20,18 @@ class Single extends Base {
 	 * @return void
 	 */
 	protected function set_items() {
-		$post_type = $this->get_post_type();
+		$post_type        = $this->get_post_type();
 		$post_type_object = get_post_type_object( $post_type );
 
-		if ( $post_type && 'post' !== $post_type ) {
-			if ( $post_type_object->has_archive ) {
-				$this->set_post_type_archive( $post_type_object );
-			}
+		if ( $post_type ) {
 			$this->set_terms( $post_type_object );
-		} else {
-			$this->set_categories();
+		}
+
+		if ( $post_type_object->hierarchical ) {
+			$this->set_ancestors( get_the_ID(), $post_type );
 		}
 
 		$this->set( get_the_title(), get_permalink() );
-	}
-
-	/**
-	 * Sets Breadcrumbs items of post type archive
-	 *
-	 * @param object $post_type_object
-	 * @return void
-	 */
-	protected function set_post_type_archive( $post_type_object ) {
-		$label = $post_type_object->label;
-		$this->set( $label, get_post_type_archive_link( $post_type_object->name ) );
 	}
 
 	/**
@@ -73,24 +61,5 @@ class Single extends Base {
 
 		$this->set_ancestors( $main_term->term_id, $taxonomy );
 		$this->set( $main_term->name, get_term_link( $main_term ) );
-	}
-
-	/**
-	 * Sets Breadcrumbs items of categories
-	 *
-	 * @return void
-	 */
-	protected function set_categories() {
-		$categories = get_the_category( get_the_ID() );
-
-		if ( $categories ) {
-			if ( count( $categories ) > 1 ) {
-				$main_category = apply_filters( 'inc2734_wp_breadcrumbs_main_term', array_shift( $categories ), $categories, 'category', get_the_ID() );
-			} else {
-				$main_category = $categories[0];
-			}
-			$this->set_ancestors( $main_category->term_id, 'category' );
-			$this->set( $main_category->name, get_term_link( $main_category ) );
-		}
 	}
 }

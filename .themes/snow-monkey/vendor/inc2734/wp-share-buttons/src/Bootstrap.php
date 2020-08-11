@@ -38,19 +38,11 @@ class Bootstrap {
 	 * @return void
 	 */
 	public function _enqueue_scripts() {
-		$relative_path = '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.min.js';
-		$src  = get_template_directory_uri() . $relative_path;
-		$path = get_template_directory() . $relative_path;
-
-		if ( ! file_exists( $path ) ) {
-			return;
-		}
-
 		wp_enqueue_script(
 			'wp-share-buttons',
-			$src,
-			[ 'jquery' ],
-			filemtime( $path ),
+			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.min.js',
+			[],
+			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/js/wp-share-buttons.min.js' ),
 			true
 		);
 	}
@@ -61,19 +53,11 @@ class Bootstrap {
 	 * @return void
 	 */
 	public function _enqueue_styles() {
-		$relative_path = '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css';
-		$src  = get_template_directory_uri() . $relative_path;
-		$path = get_template_directory() . $relative_path;
-
-		if ( ! file_exists( $path ) ) {
-			return;
-		}
-
 		wp_enqueue_style(
 			'wp-share-buttons',
-			$src,
+			get_template_directory_uri() . '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css',
 			[],
-			filemtime( $path )
+			filemtime( get_template_directory() . '/vendor/inc2734/wp-share-buttons/src/assets/css/wp-share-buttons.min.css' )
 		);
 	}
 

@@ -6,7 +6,7 @@
  */
 
 return apply_filters(
-	'inc2734_view_controller_config',
+	'inc2734_wp_view_controller_config',
 	[
 		'templates'     => [ '' ],
 		'page-template' => [ 'page-templates' ],
