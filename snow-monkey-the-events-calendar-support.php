@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin name: Snow Monkey The Events Calendar Support
+ * Plugin name: Snow Monkey The Events Calendar Integrator
  * Description: With this plugin, Snow Monkey can use The Events Calendar plugin.
- * Version: 0.2.0
+ * Version: 0.2.1
  * Tested up to: 5.5
  * Requires at least: 5.5
  * Requires PHP: 5.6
@@ -85,7 +85,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey.', 'snow-monkey-the-events-calendar-support' ); ?>
+				<?php esc_html_e( '[Snow Monkey The Events Calendar Integrator] Needs the Snow Monkey.', 'snow-monkey-the-events-calendar-support' ); ?>
 			</p>
 		</div>
 		<?php
@@ -100,7 +100,18 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs the Snow Monkey v11.0.0 or more.', 'snow-monkey-the-events-calendar-support' ); ?>
+				<?php
+				echo esc_html(
+					sprintf(
+						// translators: %1$s: version
+						__(
+							'[Snow Monkey The Events Calendar Integrator] Needs the Snow Monkey %1$s or more.',
+							'snow-monkey-the-events-calendar-support'
+						),
+						'v11.0.0'
+					)
+				);
+				?>
 			</p>
 		</div>
 		<?php
@@ -115,7 +126,7 @@ class Bootstrap {
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
-				<?php esc_html_e( '[Snow Monkey The Events Calendar Support] Needs The Events Calendar.', 'snow-monkey-the-events-calendar-support' ); ?>
+				<?php esc_html_e( '[Snow Monkey The Events Calendar Integrator] Needs The Events Calendar.', 'snow-monkey-the-events-calendar-support' ); ?>
 			</p>
 		</div>
 		<?php
