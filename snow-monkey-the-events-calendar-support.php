@@ -2,11 +2,11 @@
 /**
  * Plugin name: Snow Monkey The Events Calendar Integrator
  * Description: With this plugin, Snow Monkey can use The Events Calendar plugin.
- * Version: 0.2.1
+ * Version: 0.3.0
  * Tested up to: 5.5
  * Requires at least: 5.5
  * Requires PHP: 5.6
- * Requires Snow Monkey: 11.1.0
+ * Requires Snow Monkey: 12.2.1
  * Requires The Events Calendar: 5.3.0
  * Author: inc2734
  * Author URI: https://2inc.org
