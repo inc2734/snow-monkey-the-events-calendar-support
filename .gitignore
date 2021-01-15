@@ -7,3 +7,6 @@ dist/
 *.sql
 snow-monkey-the-events-calendar-support/
 snow-monkey-the-events-calendar-support.zip
+sql/
+.wp-env.override.json
+.themes/

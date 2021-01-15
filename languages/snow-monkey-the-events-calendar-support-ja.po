@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Snow Monkey The Events Calendar Support\n"
-"POT-Creation-Date: 2020-09-02 00:02+0900\n"
-"PO-Revision-Date: 2020-09-02 00:02+0900\n"
+"POT-Creation-Date: 2021-01-16 00:30+0900\n"
+"PO-Revision-Date: 2021-01-16 00:31+0900\n"
 "Last-Translator: inc2734 <inc@2inc.org>\n"
 "Language-Team: inc2734 <inc@2inc.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -24,15 +24,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: vendor\n"
 
-#: App/Controller/Front.php:105
+#: App/Controller/Front.php:103
 msgid "Events"
 msgstr "イベント"
 
-#: snow-monkey-the-events-calendar-support.php:88
+#: snow-monkey-the-events-calendar-support.php:52
 msgid "[Snow Monkey The Events Calendar Integrator] Needs the Snow Monkey."
 msgstr "[Snow Monkey The Events Calendar Integrator] Snow Monkey が必要です。"
 
-#: snow-monkey-the-events-calendar-support.php:108
+#: snow-monkey-the-events-calendar-support.php:83
 #, php-format
 msgid ""
 "[Snow Monkey The Events Calendar Integrator] Needs the Snow Monkey %1$s or "
@@ -41,10 +41,19 @@ msgstr ""
 "[Snow Monkey The Events Calendar Integrator] Snow Monkey %1$s 以降が必要で"
 "す。"
 
-#: snow-monkey-the-events-calendar-support.php:129
+#: snow-monkey-the-events-calendar-support.php:104
 msgid "[Snow Monkey The Events Calendar Integrator] Needs The Events Calendar."
 msgstr ""
 "[Snow Monkey The Events Calendar Integrator] The Events Calendar が必要です。"
+
+#: snow-monkey-the-events-calendar-support.php:146
+#, php-format
+msgid ""
+"[Snow Monkey The Events Calendar Integrator] Needs The Events Calendar %1$s "
+"or more."
+msgstr ""
+"[Snow Monkey The Events Calendar Integrator] The Events Calendar %1$s 以降が"
+"必要です。"
 
 #. Plugin Name of the plugin/theme
 msgid "Snow Monkey The Events Calendar Integrator"

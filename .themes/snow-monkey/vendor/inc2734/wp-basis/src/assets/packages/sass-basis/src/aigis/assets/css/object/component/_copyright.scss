@@ -1,8 +1,0 @@
-.#{$_prefix}l-footer .#{$_prefix}c-copyright {
-  @include _font-size-line-height(14px);
-  @include _padding(1, 0, 2);
-
-  a {
-    color: $_color-gray;
-  }
-}
