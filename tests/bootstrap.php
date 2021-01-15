@@ -43,7 +43,7 @@ function _manually_load_plugin() {
 	switch_theme( 'snow-monkey' );
 	search_theme_directories();
 
-	require dirname( dirname( __FILE__ ) ) . '/../the-event-calendar/the-event-calendar.php';
+	require dirname( dirname( __FILE__ ) ) . '/../the-events-calendar/the-events-calendar.php';
 	require dirname( dirname( __FILE__ ) ) . '/snow-monkey-the-events-calendar-support.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );

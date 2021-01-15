@@ -117,10 +117,10 @@ class Bootstrap {
 			]
 		);
 
-		$the_events_calendar = __DIR__ . '/../the-event-calendar/the-events-calendar.php';
+		$the_events_calendar = __DIR__ . '/../the-events-calendar/the-events-calendar.php';
 		if ( file_exists( $the_events_calendar ) ) {
 			$the_events_calendar_data = get_file_data(
-				__DIR__ . '/../the-event-calendar/the-events-calendar.php',
+				__DIR__ . '/../the-events-calendar/the-events-calendar.php',
 				[
 					'Version' => 'Version',
 				]
