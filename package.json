@@ -26,7 +26,7 @@
     "import": "run-p import:*",
     "wp-env": "wp-env",
     "start": "wp-env start && open http://localhost:8888",
-    "stop": "npm run wp db export sql/local.sql && wp-env stop",
+    "stop": "npm run export && wp-env stop",
     "cli": "wp-env run cli",
     "wp": "wp-env run cli wp",
     "pretest": "wp-env start && wp-env run composer 'install --no-interaction'",
