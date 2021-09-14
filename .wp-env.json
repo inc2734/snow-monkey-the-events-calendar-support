@@ -2,9 +2,12 @@
   "core": null,
   "plugins": [
     ".",
-    "https://downloads.wordpress.org/plugin/the-events-calendar.5.3.1.1.zip"
+    "https://downloads.wordpress.org/plugin/the-events-calendar.5.9.0.zip"
   ],
   "config": {
     "WP_DEBUG": true
+  },
+  "mappings": {
+    ".export": "./.export"
   }
 }

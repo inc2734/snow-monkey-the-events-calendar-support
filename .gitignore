@@ -11,3 +11,4 @@ sql/
 .wp-env.override.json
 .themes/
 .plugins/
+/.export/*

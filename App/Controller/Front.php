@@ -13,6 +13,7 @@ class Front {
 	 * Constructor.
 	 */
 	public function __construct() {
+		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', [ $this, '_expand_get_template_part' ], 11, 2 );
 		add_filter( 'snow_monkey_template_part_root_hierarchy', [ $this, '_snow_monkey_template_part_root_hierarchy' ] );
 		add_filter( 'tribe_events_template_paths', [ $this, '_template_paths' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, '_wp_enqueue_scripts' ] );
@@ -27,21 +28,20 @@ class Front {
 	}
 
 	/**
-	 * Filters the path of the queried template by type.
+	 * Expand get_template_part().
 	 *
-	 * @param string $template Path to the template. See locate_template().
-	 * @return string
+	 * @param boolean $expand If true, expand get_template_part().
+	 * @param array   $args   The template part args.
+	 * @return boolean
 	 */
-	public function _page_template( $template ) {
-		remove_filter( 'page_template', [ $this, '_page_template' ], 10000, 3 );
-
-		if ( \Tribe__Events__Main::POSTTYPE !== get_post_type() ) {
-			return $template;
+	public function _expand_get_template_part( $expand, $args ) {
+		if (
+			'templates/view/content' === $args['slug'] && 'tribe_events' === $args['name']
+			|| 'the-events-calendar-content' === $args['name']
+		) {
+			return true;
 		}
-
-		return is_singular()
-			? SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/templates/singular.php'
-			: SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/templates/src/views/default-template.php';
+		return $expand;
 	}
 
 	/**
@@ -112,5 +112,23 @@ class Front {
 			}
 		}
 		return $items;
+	}
+
+	/**
+	 * Filters the path of the queried template by type.
+	 *
+	 * @param string $template Path to the template. See locate_template().
+	 * @return string
+	 */
+	public function _page_template( $template ) {
+		remove_filter( 'page_template', [ $this, '_page_template' ], 10000, 3 );
+
+		if ( \Tribe__Events__Main::POSTTYPE !== get_post_type() ) {
+			return $template;
+		}
+
+		return is_singular()
+			? SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/templates/singular.php'
+			: SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/templates/src/views/default-template.php';
 	}
 }
