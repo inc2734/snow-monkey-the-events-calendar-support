@@ -1,4 +1,4 @@
-# Snow Monkey The Events Calendar Support
+# Snow Monkey The Events Calendar Integrator
 
 With this plugin, Snow Monkey can use The Events Calendar plugin.
 
