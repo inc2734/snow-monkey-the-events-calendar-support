@@ -15,7 +15,7 @@ $args = wp_parse_args(
 	// phpcs:disable VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable
 	$args,
 	// phpcs:enable
-	[
+	array(
 		'_display_adsense'                     => false,
 		'_display_article_bottom_widget_area'  => true,
 		'_display_article_top_widget_area'     => true,
@@ -29,7 +29,7 @@ $args = wp_parse_args(
 		'_display_tags'                        => false,
 		'_display_top_share_buttons'           => false,
 		'_post_type'                           => \Tribe__Events__Main::POSTTYPE,
-	]
+	)
 );
 
 the_post();

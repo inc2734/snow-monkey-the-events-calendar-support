@@ -5,7 +5,7 @@
  * Version: 0.4.1
  * Tested up to: 5.5
  * Requires at least: 5.5
- * Requires PHP: 5.6
+ * Requires PHP: 7.4
  * Requires Snow Monkey: 12.2.1
  * Requires The Events Calendar: 5.3.0
  * Author: inc2734
@@ -30,7 +30,7 @@ class Bootstrap {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_action( 'plugins_loaded', [ $this, '_plugins_loaded' ] );
+		add_action( 'plugins_loaded', array( $this, '_plugins_loaded' ) );
 	}
 
 	/**
@@ -39,13 +39,13 @@ class Bootstrap {
 	public function _plugins_loaded() {
 		load_plugin_textdomain( 'snow-monkey-the-events-calendar-support', false, basename( __DIR__ ) . '/languages' );
 
-		add_action( 'init', [ $this, '_activate_autoupdate' ] );
+		add_action( 'init', array( $this, '_activate_autoupdate' ) );
 
 		$theme = wp_get_theme( get_template() );
 		if ( 'snow-monkey' !== $theme->template && 'snow-monkey/resources' !== $theme->template ) {
 			add_action(
 				'admin_notices',
-				function() {
+				function () {
 					?>
 					<div class="notice notice-warning is-dismissible">
 						<p>
@@ -60,9 +60,9 @@ class Bootstrap {
 
 		$data = get_file_data(
 			__FILE__,
-			[
+			array(
 				'RequiresSnowMonkey' => 'Requires Snow Monkey',
-			]
+			)
 		);
 
 		if (
@@ -71,14 +71,14 @@ class Bootstrap {
 		) {
 			add_action(
 				'admin_notices',
-				function() use ( $data ) {
+				function () use ( $data ) {
 					?>
 					<div class="notice notice-warning is-dismissible">
 						<p>
 							<?php
 							echo esc_html(
 								sprintf(
-									// translators: %1$s: version
+									// translators: %1$s: version.
 									__(
 										'[Snow Monkey The Events Calendar Integrator] Needs the Snow Monkey %1$s or more.',
 										'snow-monkey-the-events-calendar-support'
@@ -97,7 +97,7 @@ class Bootstrap {
 		if ( ! class_exists( '\Tribe__Events__Main' ) ) {
 			add_action(
 				'admin_notices',
-				function() {
+				function () {
 					?>
 					<div class="notice notice-warning is-dismissible">
 						<p>
@@ -112,18 +112,18 @@ class Bootstrap {
 
 		$data = get_file_data(
 			__FILE__,
-			[
+			array(
 				'RequiresTheEventsCalendar' => 'Requires The Events Calendar',
-			]
+			)
 		);
 
 		$the_events_calendar = __DIR__ . '/../the-events-calendar/the-events-calendar.php';
 		if ( file_exists( $the_events_calendar ) ) {
 			$the_events_calendar_data = get_file_data(
 				__DIR__ . '/../the-events-calendar/the-events-calendar.php',
-				[
+				array(
 					'Version' => 'Version',
-				]
+				)
 			);
 		}
 
@@ -134,14 +134,14 @@ class Bootstrap {
 		) {
 			add_action(
 				'admin_notices',
-				function() use ( $data ) {
+				function () use ( $data ) {
 					?>
 					<div class="notice notice-warning is-dismissible">
 						<p>
 							<?php
 							echo esc_html(
 								sprintf(
-									// translators: %1$s: version
+									// translators: %1$s: version.
 									__(
 										'[Snow Monkey The Events Calendar Integrator] Needs The Events Calendar %1$s or more.',
 										'snow-monkey-the-events-calendar-support'
@@ -159,7 +159,7 @@ class Bootstrap {
 
 		add_action(
 			'after_setup_theme',
-			function() {
+			function () {
 				new Controller\Front();
 			}
 		);
@@ -173,12 +173,12 @@ class Bootstrap {
 			plugin_basename( __FILE__ ),
 			'inc2734',
 			'snow-monkey-the-events-calendar-support',
-			[
+			array(
 				'homepage' => 'https://snow-monkey.2inc.org',
-			]
+			)
 		);
 	}
 }
 
-require_once( SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/vendor/autoload.php' );
+require_once SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/vendor/autoload.php';
 new Bootstrap();

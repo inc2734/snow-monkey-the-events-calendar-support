@@ -39,12 +39,18 @@ define( 'GUTENBERG_LOAD_VENDOR_SCRIPTS', false );
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	register_theme_directory( dirname( dirname( __FILE__ ) ) . '/.themes/' );
-	switch_theme( 'snow-monkey' );
-	search_theme_directories();
+	$theme_dir = __DIR__ . '/../.themes/snow-monkey';
+	$current_theme = basename( $theme_dir );
 
-	require dirname( dirname( __FILE__ ) ) . '/../the-events-calendar/the-events-calendar.php';
-	require dirname( dirname( __FILE__ ) ) . '/snow-monkey-the-events-calendar-support.php';
+	add_filter( 'pre_option_template', function() use ( $current_theme ) {
+		return $current_theme;
+	});
+	add_filter( 'pre_option_stylesheet', function() use ( $current_theme ) {
+		return $current_theme;
+	});
+
+	require __DIR__ . '/../.plugins/the-events-calendar/the-events-calendar.php';
+	require __DIR__ . '/../snow-monkey-the-events-calendar-support.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 

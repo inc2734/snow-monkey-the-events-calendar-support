@@ -13,16 +13,16 @@ class Front {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', [ $this, '_expand_get_template_part' ], 11, 2 );
-		add_filter( 'snow_monkey_template_part_root_hierarchy', [ $this, '_snow_monkey_template_part_root_hierarchy' ] );
-		add_filter( 'tribe_events_template_paths', [ $this, '_template_paths' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, '_wp_enqueue_scripts' ] );
-		add_filter( 'snow_monkey_breadcrumbs', [ $this, '_snow_monkey_breadcrumbs' ] );
+		add_filter( 'inc2734_wp_view_controller_expand_get_template_part', array( $this, '_expand_get_template_part' ), 11, 2 );
+		add_filter( 'snow_monkey_template_part_root_hierarchy', array( $this, '_snow_monkey_template_part_root_hierarchy' ) );
+		add_filter( 'tribe_events_template_paths', array( $this, '_template_paths' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, '_wp_enqueue_scripts' ) );
+		add_filter( 'snow_monkey_breadcrumbs', array( $this, '_snow_monkey_breadcrumbs' ) );
 
 		add_action(
 			'tribe_tec_template_chooser',
-			function() {
-				add_filter( 'page_template', [ $this, '_page_template' ], 10000 );
+			function () {
+				add_filter( 'page_template', array( $this, '_page_template' ), 10000 );
 			}
 		);
 	}
@@ -36,8 +36,8 @@ class Front {
 	 */
 	public function _expand_get_template_part( $expand, $args ) {
 		if (
-			'templates/view/content' === $args['slug'] && 'tribe_events' === $args['name']
-			|| 'the-events-calendar-content' === $args['name']
+			( 'templates/view/content' === $args['slug'] && 'tribe_events' === $args['name'] ) ||
+			( 'the-events-calendar-content' === $args['name'] )
 		) {
 			return true;
 		}
@@ -81,7 +81,7 @@ class Front {
 		wp_enqueue_style(
 			'snow-monkey-the-events-calendar-support',
 			SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_URL . '/dist/css/app.min.css',
-			[],
+			array(),
 			filemtime( SNOW_MONKEY_THE_EVENTS_CALENDAR_SUPPORT_PATH . '/dist/css/app.min.css' )
 		);
 	}
@@ -99,16 +99,16 @@ class Front {
 		if ( \Tribe__Events__Main::POSTTYPE === $post_type ) {
 			$queried_object = get_queried_object();
 
-			$items[1] = [
+			$items[1] = array(
 				'title' => __( 'Events', 'snow-monkey-the-events-calendar-support' ),
 				'link'  => get_post_type_archive_link( \Tribe__Events__Main::POSTTYPE ),
-			];
+			);
 
 			if ( isset( $queried_object->ID ) ) {
-				$items[2] = [
+				$items[2] = array(
 					'title' => get_the_title( $queried_object->ID ),
 					'link'  => get_permalink( $queried_object->ID ),
-				];
+				);
 			}
 		}
 		return $items;
@@ -121,7 +121,7 @@ class Front {
 	 * @return string
 	 */
 	public function _page_template( $template ) {
-		remove_filter( 'page_template', [ $this, '_page_template' ], 10000, 3 );
+		remove_filter( 'page_template', array( $this, '_page_template' ), 10000, 3 );
 
 		if ( \Tribe__Events__Main::POSTTYPE !== get_post_type() ) {
 			return $template;

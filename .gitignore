@@ -10,5 +10,6 @@ snow-monkey-the-events-calendar-support.zip
 sql/
 .wp-env.override.json
 .themes/
-.plugins/
+.plugins/*
+!.plugins/*.zip
 /.export/*
