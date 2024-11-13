@@ -13,3 +13,4 @@ sql/
 .plugins/*
 !.plugins/*.zip
 /.export/*
+.phpunit.result.cache
