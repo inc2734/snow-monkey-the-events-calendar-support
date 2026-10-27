@@ -1,15 +1,15 @@
 {
 	"engines": {
-		"node": ">=20.10.0",
-		"npm": ">=10.2.3"
+		"node": ">=24.22.1",
+		"npm": ">=11.19.1"
 	},
 	"volta": {
-		"node": "20.11.1"
+		"node": "24.22.1"
 	},
 	"author": "inc2734",
 	"license": "GPL-2.0+",
 	"devDependencies": {
-		"@wordpress/env": "^10.11.0",
+		"@wordpress/env": "^12.0.0",
 		"autoprefixer": "^10.4.20",
 		"cpy-cli": "^5.0.0",
 		"cssnano": "^7.0.6",
@@ -33,20 +33,30 @@
 		"wp-env": "wp-env",
 		"start": "wp-env start && open http://localhost:8888",
 		"stop": "npm run export && wp-env stop",
+		"destroy": "wp-env destroy && wp-env destroy --config=.wp-env.tests.json",
 		"cli": "wp-env run cli --env-cwd=\"wp-content/plugins/snow-monkey-the-events-calendar-support\"",
 		"wp": "wp-env run cli --env-cwd=\"wp-content/plugins/snow-monkey-the-events-calendar-support\" wp",
 		"composer": "wp-env run cli --env-cwd=\"wp-content/plugins/snow-monkey-the-events-calendar-support\" composer",
-		"pretest": "wp-env start && npm run composer install -- --no-interaction",
-		"test:lint:php": "npm run composer lint",
+		"test:php:start": "wp-env start --config=.wp-env.tests.json",
+		"test:php:stop": "wp-env stop --config=.wp-env.tests.json",
+		"test-composer": "wp-env run --config=.wp-env.tests.json --env-cwd=\"wp-content/plugins/snow-monkey-the-events-calendar-support\" cli composer",
+		"pretest:php:lint": "npm run test:php:start && npm run test-composer install -- --no-interaction",
+		"test:php:lint": "npm run test-composer lint",
+		"posttest:php:lint": "npm run test:php:stop",
+		"test:lint:php": "npm run test:php:lint || (status=$?; npm run test:php:stop; exit $status)",
 		"test:lint": "run-s test:lint:*",
-		"test:unit:php": "npm run composer install-theme && npm run composer install-plugin && wp-env run --env-cwd=\"wp-content/plugins/snow-monkey-the-events-calendar-support\" tests-wordpress vendor/bin/phpunit -c .phpunit.xml.dist --verbose",
+		"test:prepare:theme": "npm --prefix .themes/snow-monkey ci && npm --prefix .themes/snow-monkey run packages && npm --prefix .themes/snow-monkey run css && npm --prefix .themes/snow-monkey run js && npm --prefix .themes/snow-monkey run img && npm --prefix .themes/snow-monkey run fonts",
+		"pretest:php:unit": "npm run test:php:start && npm run test-composer install -- --no-interaction && npm run test-composer install-theme && npm run test:prepare:theme && npm run test-composer install-plugin",
+		"test:php:unit": "wp-env run --config=.wp-env.tests.json --env-cwd=\"wp-content/plugins/snow-monkey-the-events-calendar-support\" wordpress vendor/bin/phpunit -c .phpunit.xml.dist --verbose",
+		"posttest:php:unit": "npm run test:php:stop",
+		"test:unit:php": "npm run test:php:unit || (status=$?; npm run test:php:stop; exit $status)",
 		"test:unit": "run-s test:unit:*",
-		"test": "run-s test:*",
+		"test": "run-s test:lint test:unit",
 		"clean:css": "rimraf dist/css && mkdir -p dist/css",
 		"clean:zip": "rimraf snow-monkey-the-events-calendar-support.zip",
-		"css": "npm run clean:css && sass --no-source-map src/css:dist/css && postcss dist/css/*.css -r",
+		"css": "npm run clean:css && sass --no-source-map src/css:dist/css && postcss dist/css/*.css --dir dist/css --ext min.css --no-map",
 		"build": "run-p css",
-		"zip:pack": "rsync -a --exclude='/vendor' --exclude='/node_modules' --exclude='.*' --exclude='*.config.js' --exclude='*.xml.dist' --exclude='/tests' --exclude='package*.json' . snow-monkey-the-events-calendar-support && npm run wp-env start && npm run composer install -- --no-dev -d snow-monkey-the-events-calendar-support",
+		"zip:pack": "rsync -a --exclude='/vendor' --exclude='/node_modules' --exclude='.*' --exclude='*.config.js' --exclude='*.xml.dist' --exclude='/tests' --exclude='package*.json' . snow-monkey-the-events-calendar-support && npm run wp-env start && npm run composer install -- --no-interaction --no-dev -d snow-monkey-the-events-calendar-support",
 		"zip:archive": "zip -9 -qmr snow-monkey-the-events-calendar-support.zip snow-monkey-the-events-calendar-support",
 		"zip": "npm run clean:zip && npm run zip:pack && npm run zip:archive"
 	}

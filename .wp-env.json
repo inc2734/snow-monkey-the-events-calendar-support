@@ -1,13 +1,14 @@
 {
-  "core": null,
-  "plugins": [
-    ".",
-    "https://downloads.wordpress.org/plugin/the-events-calendar.5.9.0.zip"
-  ],
-  "config": {
-    "WP_DEBUG": true
-  },
-  "mappings": {
-    ".export": "./.export"
-  }
+	"core": null,
+	"plugins": [
+		".",
+		"https://downloads.wordpress.org/plugin/the-events-calendar.6.8.1.zip"
+	],
+	"config": {
+		"WP_DEBUG": true
+	},
+	"mappings": {
+		".export": "./.export"
+	},
+	"testsEnvironment": false
 }
